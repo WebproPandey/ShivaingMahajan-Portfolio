@@ -1757,6 +1757,8 @@ body::-webkit-scrollbar {
   }
 }
 
+
+
 @media (min-width: 320px) and (max-width: 767px) {
   .pascdn {
     display: none;
@@ -1812,7 +1814,6 @@ body::-webkit-scrollbar {
     width: 100%;
     flex-direction: column;
     justify-content: space-between;
-    /* opacity: 0; */
     gap: 0px;
   }
 
@@ -2398,192 +2399,104 @@ body::-webkit-scrollbar {
   }
 }
 
-@media (min-width: 320px) and (max-width: 420px) {
-  .HeaderRight {
-    height: 12vw;
-    width: 12vw;
-  }
-
-  .hamburger {
-    gap: 3vw;
-    mix-blend-mode: difference;
-  }
-
-  .line {
-    height: 0.3rem;
-    width: 100%;
-    background: #3d3c3c;
-  }
-
-  .Noise__NoiseAnimation {
-    display: none;
-  }
-
-  .SideNav__Sidebar {
-    top: -100vh !important;
-    left: 0%;
-    width: 100%;
-  }
-
-  .mainsidebar {
-    top: -200vh;
-    left: 0%;
-    width: 100%;
-    flex-direction: column;
-    justify-content: center;
-    background-color: #212121;
-  }
-
-  .SideNav__InnerWrapper {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .SideNavInnerBG {
-    position: fixed;
-    top: -120vh;
-    left: 0%;
-    width: 100%;
-    height: 100%;
-    opacity: 1;
-    background: #121212;
-    clip-path: path(
-      "M 0 557 C 146.3 557 146.3 557 209 557 C 271.7 557 271.7 557 418 557 L 418 0 L 0 0"
-    );
-  }
-  .NavigationItems__Wrapper {
-    font-size: 7rem;
-    font-family: "Nohemi";
-    line-height: 100%;
-    letter-spacing: -0.02em;
-    position: relative;
-    cursor: pointer;
-    height: 100%;
-    width: 100%;
-    left: 0%;
-    top: 0%;
-  }
-  .NavigationItems__ItemsWrapper {
-    width: 100%;
-    height: 100%;
-    padding-left: 0rem;
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    gap: 4vh;
-  }
-
-  .NavItem__Wrapper {
-    width: 100%;
-    height: fit-content;
-    top: -120vh;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    padding-left: 2rem;
-  }
-
-  .NavItem__Item {
-    font-size: 6vh;
-    line-height: 8vh;
-  }
-  .NavItemwork {
-    line-height: 3.4rem;
-    flex-wrap: wrap;
-  }
-  .NavItemwork span {
-    display: inline-block;
-    color: #121212;
-  }
-  .NavItem__Blinky {
-    border-bottom: 6px solid #aa94e8;
-    display: inline-block;
-    width: 30px;
-    height: 80px;
-    z-index: 1;
-    opacity: 0;
-    visibility: hidden;
-    animation: blink 0.5s infinite alternate;
-    display: none;
-  }
+@media only screen and (min-width: 320px) and (max-width: 375px) {
+.SideNav__Sidebar {
+        -webkit-clip-path: polygon(0px 0px, 100% 0px, 100% 100%, 0px 100%);
+        clip-path: polygon(0px 0px, 100% 0px, 100% 100%, 0px 100%);
+        top: -100%;
+        position: fixed;
+        left: 0 !important;
+        width: 100%;
+        height: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        padding-left: 0rem !important;
+        -webkit-transition: all 0.8s cubic-bezier(0.79, 0.33, 0.45, 0.85);
+        -o-transition: all 0.8s cubic-bezier(0.79, 0.33, 0.45, 0.85);
+        transition: all 0.8s cubic-bezier(0.79, 0.33, 0.45, 0.85);
+        z-index: 999;
 }
-
-@media only screen and (max-width: 320px) {
-  .SideNav__Sidebar {
-    -webkit-clip-path: polygon(0px 0px, 100% 0px, 100% 100%, 0px 100%);
-    clip-path: polygon(0px 0px, 100% 0px, 100% 100%, 0px 100%);
-    top: -100%;
-    position: fixed;
-    left: 0 !important;
-    width: 100%;
-    height: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    padding-left: 1rem;
-    -webkit-transition: all 0.8s cubic-bezier(0.79, 0.33, 0.45, 0.85);
-    -o-transition: all 0.8s cubic-bezier(0.79, 0.33, 0.45, 0.85);
-    transition: all 0.8s cubic-bezier(0.79, 0.33, 0.45, 0.85);
-    z-index: 999;
-  }
-  .SideNav {
-    display: none;
-  }
-}
-@media only screen and (min-width: 321px) and (max-width: 375px) {
-  .SideNav__Sidebar {
-    top: 0;
-  }
-  .SideNav {
-    display: none;
-  }
-  .SideNav__Sidebar {
-    -webkit-clip-path: polygon(0px 0px, 100% 0px, 100% 100%, 0px 100%);
-    clip-path: polygon(0px 0px, 100% 0px, 100% 100%, 0px 100%);
-    top: -100%;
-    position: fixed;
-    left: 0 !important;
-    width: 100%;
-    height: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    padding-left: 1rem;
-    -webkit-transition: all 0.8s cubic-bezier(0.79, 0.33, 0.45, 0.85);
-    -o-transition: all 0.8s cubic-bezier(0.79, 0.33, 0.45, 0.85);
-    transition: all 0.8s cubic-bezier(0.79, 0.33, 0.45, 0.85);
-    z-index: 999;
-  }
-}
-
-
-@media only screen and (min-width: 376px) and (max-width: 428px) {
-  .Header__Wrapper {
+  
+.Header__Wrapper {
     padding: 2rem 1rem !important;
-  }
-  .NavigationItems__Wrapper {
+}
+
+.NavigationItems__Wrapper {
     width: 100%;
     margin-left: 2rem !important;
     margin-right: 0rem !important;
     gap: 0rem !important;
     padding-right: 3rem !important;
-  }
+}
   .NavigationItems__ItemsWrapper {
     gap: 0rem !important;
-    line-height: 3rem;
+    line-height: 2.5rem;
+
+  }
+  .NavItem__Item {
+    font-size: 2.5rem;
+    text-decoration: none;
+    font-family: Nohemi;
+    padding: 0 .5rem;
+  }
+  .hamburger {
+    width: 2.5rem !important;
+    height: 2.5rem !important;
+  }
+  .hamburger .line {
+    height: 0.3rem !important;
+  }
+  .SideNav {
+    display: none;
+  }
+} 
+
+@media only screen and (min-width: 376px) and (max-width: 428px) {
+.SideNav__Sidebar {
+        -webkit-clip-path: polygon(0px 0px, 100% 0px, 100% 100%, 0px 100%);
+        clip-path: polygon(0px 0px, 100% 0px, 100% 100%, 0px 100%);
+        top: -100%;
+        position: fixed;
+        left: 0 !important;
+        width: 100%;
+        height: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        padding-left: 0rem !important;
+        -webkit-transition: all 0.8s cubic-bezier(0.79, 0.33, 0.45, 0.85);
+        -o-transition: all 0.8s cubic-bezier(0.79, 0.33, 0.45, 0.85);
+        transition: all 0.8s cubic-bezier(0.79, 0.33, 0.45, 0.85);
+        z-index: 999;
+}
+  
+.Header__Wrapper {
+    padding: 2rem 1rem !important;
+}
+
+.NavigationItems__Wrapper {
+    width: 100% !important;
+    margin-left: 2rem !important;
+    margin-right: 0rem !important;
+    gap: 0rem !important;
+    padding-right: 3rem !important;
+}
+  .NavigationItems__ItemsWrapper {
+    gap: 0rem !important;
+    line-height: 2.5rem;
     margin-right: 2rem !important;
+
   }
   .NavItem__Item {
     font-size: 3rem;
@@ -2600,28 +2513,7 @@ body::-webkit-scrollbar {
   .SideNav {
     display: none;
   }
-  .SideNav__Sidebar {
-    -webkit-clip-path: polygon(0px 0px, 100% 0px, 100% 100%, 0px 100%);
-    clip-path: polygon(0px 0px, 100% 0px, 100% 100%, 0px 100%);
-    top: -100%;
-    position: fixed;
-    left: 0 !important;
-    width: 70%;
-    height: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    padding-left: 1rem;
-    -webkit-transition: all 0.8s cubic-bezier(0.79, 0.33, 0.45, 0.85);
-    -o-transition: all 0.8s cubic-bezier(0.79, 0.33, 0.45, 0.85);
-    transition: all 0.8s cubic-bezier(0.79, 0.33, 0.45, 0.85);
-    z-index: 999;
-  }
+  
 }
 
 
@@ -2636,7 +2528,7 @@ body::-webkit-scrollbar {
     clip-path: polygon(0px 0px, 100% 0px, 100% 100%, 0px 100%);
     left: -100%;
     position: fixed;
-    width: 80%;
+    width: 75% !important;
     height: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -2669,9 +2561,10 @@ body::-webkit-scrollbar {
     margin-right: 2rem !important;
   }
   .NavItem__Item {
-    font-size: 3rem;
+    font-size: 2.6rem;
     text-decoration: none;
     font-family: Nohemi;
+    padding: 0 1rem;
   }
   .hamburger {
     width: 3rem !important;
@@ -2690,7 +2583,7 @@ body::-webkit-scrollbar {
     left: -100%;
     position: fixed;
     top: 0;
-    width: 75%;
+    width: 75% !important;
     height: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -3056,7 +2949,7 @@ body::-webkit-scrollbar {
     left: -100%;
     position: fixed;
     top: 0;
-    width: 75%;
+    width: 75% !important;
     height: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -3202,7 +3095,7 @@ body::-webkit-scrollbar {
     left: -100%;
     position: fixed;
     top: 0;
-    width: 75%;
+    width: 75% !important;
     height: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -3248,6 +3141,9 @@ body::-webkit-scrollbar {
     z-index: 999;
   }
 }
+
+
+
 
 
 .hamburger {
@@ -3346,7 +3242,6 @@ body::-webkit-scrollbar {
   font-weight: 600;
   position: relative;
 }
-
 .SideNav__Wrapper {
   position: fixed;
   top: 0px;
@@ -3370,6 +3265,7 @@ body::-webkit-scrollbar {
   background-color: rgba(46, 56, 48, 0.8);
   pointer-events: none;
 }
+
 .Noise__NoiseWrapper {
   width: 100%;
   height: 100%;
@@ -3446,9 +3342,8 @@ body::-webkit-scrollbar {
 .SideNav__Sidebar {
   -webkit-clip-path: polygon(0px 0px, 100% 0px, 100% 100%, 0px 100%);
   clip-path: polygon(0px 0px, 100% 0px, 100% 100%, 0px 100%);
-  /* left: -100%; */
   position: fixed;
-  width: 75%;
+  width: 100%;
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3459,10 +3354,7 @@ body::-webkit-scrollbar {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   padding-left: 10rem;
-  /* background-color: black; */
-  /* -webkit-transition: all 0.8s cubic-bezier(0.79, 0.33, 0.45, 0.85);
-    -o-transition: all 0.8s cubic-bezier(0.79, 0.33, 0.45, 0.85);
-    transition: all 0.8s cubic-bezier(0.79, 0.33, 0.45, 0.85); */
+  
 }
 .SideNav__InnerWrapper {
   max-width: 100%;
@@ -3528,7 +3420,6 @@ body::-webkit-scrollbar {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  /* padding-right: 1%; */
   -webkit-transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
   -o-transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
   transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
@@ -3544,16 +3435,12 @@ body::-webkit-scrollbar {
   display: inline-block;
   width: 60px;
   height: 80px;
-  /* -webkit-transform: translateY(10px); */
-  /* -ms-transform: translateY(10px); */
-  /* transform: translateY(10px); */
+
   z-index: 1;
   opacity: 0;
-  /* display: none; */
   visibility: hidden;
   -webkit-animation: blink 0.5s infinite alternate;
   animation: blink 0.5s infinite alternate;
-  /* Use alternate to blink on both states */
 }
 .brdrcntcn {
   border: none !important;
@@ -3589,4 +3476,4 @@ body::-webkit-scrollbar {
   overflow: hidden;
   background: url(/static/Black-Background-Tile-2x-157406eâ€¦.webp)
     rgb(18, 22, 19);
-}
+} 
