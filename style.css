@@ -75,7 +75,8 @@ body::-webkit-scrollbar {
   overflow-x: hidden;
   overflow-y: hidden;
   position: sticky;
-  top: 0;
+  top: 0 !important;
+  z-index: 2;
 }
 
 .pascdn {
@@ -249,43 +250,47 @@ body::-webkit-scrollbar {
 .namelogo h1 div {
   text-transform: none;
 }
+
 .gallery {
-  width: 100%;
-  position: absolute;
-  top: 45%;
-  z-index: 2;
-}
+    width: 100%;
+    position: absolute;
+    top: 0%;
+    z-index: 3;
+    padding-top: 15rem;
+  }
+ 
+  .item {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .item-1 {
+    align-items: end;
+    padding-right: 7vw;
 
-.item {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+  }
+  .item-2 {
+    align-items: start;
+    padding-left: 7vw;
+  }
+  .item-3 {
+    align-items: center;
+    padding-top: 7vw;
+  }
+  .item-4 {
+    align-items: end;
+    padding-right: 7vw;
+    padding-top: 7vw;
+  }
+  .item-5 {
+    align-items: start;
+    padding-left: 7vw;
+  }
 
-.item-1 {
-  align-items: end;
-  padding-right: 7vw;
-}
-.item-2 {
-  align-items: start;
-  padding-left: 7vw;
-}
-.item-3 {
-  align-items: center;
-  padding-top: 7vw;
-}
-.item-4 {
-  align-items: end;
-  padding-right: 7vw;
-  padding-top: 7vw;
-}
-.item-5 {
-  align-items: start;
-  padding-left: 7vw;
-}
 
 .second {
   height: 100vh;
@@ -294,6 +299,7 @@ body::-webkit-scrollbar {
   justify-content: center;
   align-items: center;
   z-index: 0;
+  margin-top: 5vw;
 }
 .second .videosection {
   height: 100%;
@@ -360,53 +366,48 @@ body::-webkit-scrollbar {
 .thirdsilder {
   height: 20vh;
   width: 100%;
-  margin-top: 2vw;
+  margin-top: 3vw;
 }
 .thirdsilder .slidetext {
-  height: 10vh;
-  width: 120vw;
+  height: 15vh;
+  width:auto;
   background-color: white;
-  transform-origin: right;
-  transform: rotate(-3deg);
+  position: relative;
+  overflow-x: auto;
   display: flex;
   align-items: center;
-  overflow-x: auto;
+  transform-origin: right;
+  transform: rotate(-2deg);
 }
 .slidetext::-webkit-scrollbar {
   display: none;
 }
-.thirdsilder .slidetext .movingtext,
-.movingtext1 {
+.movingtext{
   display: flex;
   justify-content: start;
   align-items: center;
   gap: 2vw;
   flex-wrap: nowrap;
   flex-shrink: 0;
-  animation: textnameslide 120s infinite linear;
+  margin-right: 2vw;
 }
-@keyframes textnameslide {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(calc(-100% - 20px));
-  }
-}
-.thirdsilder .slidetext .movingtext .textband {
+
+
+.movingtext .textband {
   font-size: 2rem;
   color: #17191a;
   font-family: "plus";
   font-weight: 300;
   text-transform: capitalize;
-  flex-shrink: 0;
   mix-blend-mode: difference !important;
 }
-.thirdsilder .slidetext .movingtext img {
+.movingtext img {
   height: auto;
   max-width: 26%;
   transform: rotate(4deg);
 }
+
+
 .instoductionsection {
   width: 100%;
   margin-top: 10vw;
@@ -437,7 +438,7 @@ body::-webkit-scrollbar {
 }
 .leftsection-intro .text-intro p,
 .rightsection-intro .text-intro p {
-  font-size: 1.7vw;
+  font-size: 2vw;
   font-family: "plus";
   color: white;
   font-weight: 200;
@@ -500,47 +501,45 @@ body::-webkit-scrollbar {
   margin-top: 10vh;
 }
 .fourthsectionslider {
-  height: 15vh;
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: start;
 }
+
 .fourthsectionslider .fourthslidetext {
+  height: 15vh;
+  width:auto;  
   display: flex;
-  justify-content: center;
   align-items: center;
   overflow-x: auto;
-  flex-wrap: nowrap;
 }
+
 .fourthslidetext::-webkit-scrollbar {
   display: none;
 }
 .fourthsectionslider .fourthslidetext .fourthmovingtext {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: start;
   gap: 3vw;
   flex-wrap: nowrap;
-  flex-shrink: 0;
-  animation: textnameslide 120s infinite linear;
+  flex-shrink: 0
 }
+
 .fourthsectionslider .fourthslidetext .fourthmovingtext img {
   height: 10vh;
   width: 10vh;
 }
-.fourthmovingtext div {
+.fourthslidetext .fourthmovingtext .textstrok {
   font-size: 5vw;
   text-transform: uppercase;
   font-family: "Nohemi";
   font-weight: 600;
 }
-.fourthmovingtext div span {
+.fourthmovingtext .textstrok span {
   margin-left: 2vw;
   -webkit-text-stroke: #17191a;
   -webkit-text-stroke-width: 0.1px;
   -webkit-text-fill-color: white;
-}
+} 
 .mobile {
   display: none;
 }
@@ -597,7 +596,7 @@ body::-webkit-scrollbar {
   color: #a8a4a4;
 }
 .leftsection .videoinfo .secondpera p {
-  font-size: 2.7vw;
+  font-size: 2.5rem;
   font-family: "Nohemi";
 }
 
@@ -867,32 +866,35 @@ body::-webkit-scrollbar {
   width: 120vw;
   transform-origin: right;
   display: flex;
-  align-items: center;
+  align-items: start;
   overflow-x: auto;
   position: absolute;
-  transform: rotate(-6deg);
+  /* transform-origin: right; */
+  transform: rotate(-8deg);
 }
 .eightsilder1 {
-  overflow: hidden;
-  height: 60vh;
+  /* overflow: hidden; */
+  height: 40vh;
+  border: 1px solid  chartreuse;
 }
 .slidetext1 {
-  color: white;
+  color: white !important;
   z-index: 3;
   margin-top: -10rem;
 }
 
 .eightsilder2 {
   position: absolute;
-  top: -10.5rem;
-  height: 28vh;
-  overflow: hidden;
+  height: 40vh;
+  /* overflow: hidden; */
+  border: 1px solid  brown;
+  top: -40vh;
 }
 
 .eightsilder2 .slidetext2 {
   color: black;
   z-index: 2;
-  margin-top: -3rem;
+  margin-top: 10rem;  
 }
 
 .slidetext::-webkit-scrollbar {
@@ -905,7 +907,7 @@ body::-webkit-scrollbar {
   gap: 2vw;
   flex-wrap: nowrap;
   flex-shrink: 0;
-  animation: textnameslide 200s infinite linear;
+  /* animation: textnameslide 250s infinite linear; */
 }
 @keyframes textnameslide {
   0% {
@@ -915,16 +917,20 @@ body::-webkit-scrollbar {
     transform: translateX(calc(-100% - 16px));
   }
 }
-.eightsilder .slidetext .movingtext .textband {
+.eightsilder .slidetext1 .movingtext .textband {
   font-size: 6vw;
-  font-weight: 300;
   text-transform: capitalize;
   flex-shrink: 0;
   font-family: sans-serif;
   font-weight: 500;
+  color: white !important;
 }
 .eightsilder2 .slidetext .movingtext .textband {
   color: black;
+  font-size: 6vw;
+  font-weight: 700;
+
+
 }
 .eightsilder .slidetext .movingtext .textband i {
   display: inline-block;
@@ -2654,7 +2660,7 @@ body::-webkit-scrollbar {
     left: -100%;
     position: fixed;
     top: 0;
-    width: 75%;
+    width: 75% !important;
     height: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
