@@ -853,7 +853,7 @@ body::-webkit-scrollbar {
   margin-top: 20vw;
   position: relative;
 }
-.eightsilder {
+.eightsilder{
   width: 100%;
   display: flex;
   align-items: center;
@@ -862,84 +862,81 @@ body::-webkit-scrollbar {
   position: relative;
   background-color: rgba(0, 0, 0, 0);
 }
-.eightsilder .slidetext {
+.eightsilder1{
+  overflow: hidden;
+  height: 50vh;
+}
+.eightsilder2{
+  position: absolute;
+  top: -19rem;
+  height: 50vh;
+  overflow: hidden;
+}
+.eightsilder .slidetext{
   width: 120vw;
   transform-origin: right;
   display: flex;
-  align-items: start;
+  align-items: center;
   overflow-x: auto;
   position: absolute;
-  /* transform-origin: right; */
-  transform: rotate(-8deg);
+  transform: rotate(-6deg);
 }
-.eightsilder1 {
-  /* overflow: hidden; */
-  height: 40vh;
-  border: 1px solid  chartreuse;
+.eightsilder2 .slidetext2{
+  color:black;
+  z-index: 2;
+  margin-top: -3rem;
 }
 .slidetext1 {
-  color: white !important;
+  color:white;
   z-index: 3;
   margin-top: -10rem;
 }
-
-.eightsilder2 {
-  position: absolute;
-  height: 40vh;
-  /* overflow: hidden; */
-  border: 1px solid  brown;
-  top: -40vh;
-}
-
-.eightsilder2 .slidetext2 {
-  color: black;
-  z-index: 2;
-  margin-top: 10rem;  
-}
-
-.slidetext::-webkit-scrollbar {
+.slidetext::-webkit-scrollbar{
   display: none;
 }
-.eightsilder .slidetext .movingtext {
+.eightsilder .slidetext .movingtext{
   display: flex;
   justify-content: start;
   align-items: center;
   gap: 2vw;
   flex-wrap: nowrap;
   flex-shrink: 0;
-  /* animation: textnameslide 250s infinite linear; */
+  animation: textnameslide 200s infinite linear;
 }
 @keyframes textnameslide {
-  0% {
-    transform: translateX(0%);
+  0%{
+      transform: translateX(0%);
   }
-  100% {
-    transform: translateX(calc(-100% - 16px));
+  100%{
+      transform: translateX(calc(-100% - 16px));
   }
 }
-.eightsilder .slidetext1 .movingtext .textband {
+.eightsilder .slidetext .movingtext .textband{
   font-size: 6vw;
   text-transform: capitalize;
   flex-shrink: 0;
-  font-family: sans-serif;
+  font-family: sans-serif; 
   font-weight: 500;
-  color: white !important;
 }
-.eightsilder2 .slidetext .movingtext .textband {
-  color: black;
-  font-size: 6vw;
-  font-weight: 700;
-
-
+.eightsilder2 .slidetext2 .movingtext .textband{
+ color:#16181e !important;
+ font-weight: 500;
 }
-.eightsilder .slidetext .movingtext .textband i {
+.eightsilder .slidetext .movingtext .textband{
+  color:white;
+ }
+.eightsilder .slidetext .movingtext .textband i{
   display: inline-block;
 }
-.eightsilder .slidetext .movingtext .shapec {
-  width: 18vh;
-  height: 18vh;
-  transform: rotate(10deg);
+.eightsilder .slidetext .movingtext  .shapec{
+ width: 18vh;
+ height: 18vh;
+ transform: rotate(10deg);
 }
+
+
+
+
 .eightswiperwraper {
   height: auto;
   width: 100%;
@@ -1622,29 +1619,24 @@ body::-webkit-scrollbar {
   }
 
   .eightsilder1 {
-    height: 45vh;
+    height: 50vh;
   }
-
-  .slidetext1 {
-    margin-top: -0.9rem;
-    overflow-x: hidden;
-  }
-
   .eightsilder2 {
-    height: 22vh;
-    top: -7rem;
+    height: 50vh;
+    overflow-x: hidden;
+    top:-15.5rem;  
+  }
+  .slidetext1 {
+    margin-top: 0rem;
     overflow-x: hidden;
   }
-
   .eightsilder2 .slidetext2 {
-    margin-top: -2rem;
+    margin-top: 4.5rem;
   }
-
   .eightsilder .slidetext .movingtext .shapec {
-    width: 10vh;
-    height: 10vh;
+    width: 15vh;
+    height: 15vh;
   }
-
   .eightswiperwraper {
     height: auto;
     width: 100%;
@@ -2227,25 +2219,25 @@ body::-webkit-scrollbar {
   }
 
   .eightsilder1 {
-    height: 20vh;
+    height: 30vh;
+    overflow-x: hidden !important;
+  }
+  .eightsilder2 {
+    height: 30vh;
+    top: -9.5rem !important;
     overflow-x: hidden !important;
   }
 
   .eightsilder1 .slidetext1 {
-    transform: rotate(-5deg);
+    transform: rotate(-7deg);
     gap: 2rem;
-    height: 20vh;
+    margin-top: -15rem;
   }
 
-  .eightsilder2 {
-    height: 20vh;
-    top: -6.4rem !important;
-    overflow-x: hidden !important;
-  }
-
+ 
   .eightsilder2 .slidetext2 {
-    margin-top: 2.6rem;
-    transform: rotate(-5deg);
+    margin-top: 4rem;
+    transform: rotate(-7deg);
   }
 
   .eightsilder .slidetext .movingtext {
@@ -2253,13 +2245,13 @@ body::-webkit-scrollbar {
   }
 
   .eightsilder .slidetext .movingtext .textband {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-family: "plus";
   }
 
   .eightsilder .slidetext .movingtext .shapec {
-    width: 8vh;
-    height: 8vh;
+    width:10vh;
+    height: 10vh;
   }
 
   .eightswiperwraper {
@@ -2404,6 +2396,8 @@ body::-webkit-scrollbar {
     font-size: 0.8rem;
   }
 }
+
+
 
 @media only screen and (min-width: 320px) and (max-width: 375px) {
 .SideNav__Sidebar {
