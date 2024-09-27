@@ -52,139 +52,7 @@ function first() {
       ease: "power4.inOut",
     });
 
-  //   if (window.matchMedia("(min-width: 320px) and (max-width: 767px)").matches) {
-  //     var tl = gsap.timeline({
-  //       scrollTrigger: {
-  //         trigger: "#home",
-  //         start: "top top",
-  //         end: "+=" + gallery.offsetHeight,
-  //         scrub: 0.8,
-  //         pin: true,
-  //       },
-  //     });
-  //     tl.to(
-  //       ".nameheading",
-  //       {
-  //         width: "20%",
-  //         height: "10%",
-  //         duration: 50,
-  //         top: "-15%",
-  //         ease: "linear",
-  //       },
-  //       "b"
-  //     )
-  //       .to(
-  //         "#namelogo h1",
-  //         {
-  //           fontSize: "2rem",
-  //           ease: "linear",
-  //           duration: 50,
-  //         },
-  //         "b"
-  //       )
-  //       .to(
-  //         ".gallery",
-  //         {
-  //           y: () => `-${document.querySelector(".gallery").offsetHeight + 300}`,
-  //           duration: 50,
-  //           ease: "linear",
-  //         },
-  //         "b"
-  //       )
-  //       .to(
-  //         ".contentWraper",
-  //         {
-  //           opacity: 1,
-  //         },
-  //         "b"
-  //       )
-  //       .from(
-  //         ".uperheading, .uperheading h1 ,.wfirst p, .introheading h1 ,#cta_animate",
-  //         {
-  //           opacity: 0,
-  //           y: "10vh",
-  //           duration: 5,
-  //           stagger: {
-  //             amount: 0.3,
-  //           },
-  //           ease: "linear",
-  //         }
-  //       );
-  //   } else if (
-  //     window.matchMedia("(min-width: 768px) and (max-width: 1020px)").matches
-  //   ) {
-  //     var tl = gsap.timeline({
-  //       scrollTrigger: {
-  //         trigger: "#home",
-  //         start: "top top",
-  //         end: "+=" + gallery.offsetHeight,
-  //         scrub: 0.8,
-  //         pin: true,
-  //       },
-  //     });
-  //     tl.to(
-  //       ".nameheading",
-  //       {
-  //         width: "20%",
-  //         height: "10%",
-  //         duration: 10,
-  //         top: "5%",
-  //         ease: "Power4.Out",
-  //       },
-  //       "b"
-  //     )
-  //       .to(
-  //         "#namelogo h1",
-  //         {
-  //           fontSize: "2rem",
-  //           ease: "Power4.Out",
-  //           duration: 12,
-  //         },
-  //         "b"
-  //       )
-  //       .to(
-  //         "#namelogo h1",
-  //         {
-  //           fontSize: "3rem",
-  //           ease: "Power4.Out",
-  //           duration: 12,
-  //         },
-  //         "b"
-  //       )
-  //       .to(
-  //         ".gallery",
-  //         {
-  //           y: () => `-${document.querySelector(".gallery").offsetHeight + 190}`,
-  //           duration: 20,
-  //           ease: "power2.easeInOut",
-  //         },
-  //         "b"
-  //       )
-  //       .to(
-  //         ".contentWraper",
-  //         {
-  //           opacity: 1,
-  //         },
-  //         "b"
-  //       )
-  //       .from(
-  //         ".uperheading, .uperheading h1 ,.wfirst p, .introheading h1 ,#cta_animate",
-  //         {
-  //           opacity: 0,
-  //           y: "10vh",
-  //           duration: 1,
-  //           stagger: {
-  //             amount: 0.3,
-  //           },
-  //           ease: "Power4.Out",
-  //         }
-  //       );
-  //   }
-
-  //   else {
-
   var gallery = document.querySelector(".gallery");
-  console.log(gallery.offsetHeight);
 
   var tl2 = gsap.timeline({
     scrollTrigger: {
@@ -193,7 +61,6 @@ function first() {
       end: "+=" + gallery.offsetHeight,
       scrub: 0.8,
       pin: true,
-      markers: true,
     },
   });
 
@@ -221,7 +88,7 @@ function first() {
     .to(
       ".gallery",
       {
-        y: -(gallery.offsetHeight + window.innerWidth * 0.2), // 20vw in pixels
+        y: `-${gallery.offsetHeight}`, // 20vw in pixels
         duration: 20,
         ease: "power2.easeInOut",
       },
@@ -246,10 +113,29 @@ function first() {
         ease: "Power4.Out",
       }
     );
-  //   }
+
+// gsap.matchMedia().add("(min-width: 320px) and (max-width: 767px)", function() {
+//   var tl2 = gsap.timeline({
+//     scrollTrigger: {
+//       trigger: "#home",
+//       start: "top top",
+//       end: "+=" + gallery.offsetHeight,
+//       scrub: 0.8,
+//       pin: true,
+//       markers: true,
+//     },
+//   });
+//   tl2.to("#namelogo h1", {
+//     fontSize: "1.8rem",
+//     ease: "Power4.Out",
+//     duration: 12,
+//   }, "q");
+// });
+
+
 }
 
-// first();
+first();
 
 function second() {
   gsap.from(".second .videosection", {
@@ -280,7 +166,7 @@ function second() {
   });
 }
 
-// second();
+second();
 
 
 const mobile = 428;
@@ -1023,13 +909,14 @@ function fotter() {
   });
 }
 fotter()
+
+let resizeTimeout;
+
 window.addEventListener("resize", function () {
   clearTimeout(resizeTimeout);
   resizeTimeout = setTimeout(() => {
     location.reload();
   }, 200);
 });
-
-
 
 

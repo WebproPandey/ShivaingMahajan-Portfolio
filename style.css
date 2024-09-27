@@ -1277,9 +1277,9 @@ body::-webkit-scrollbar {
   }
 
   .gallery {
-    top: 30%;
+    top: 0%;
     flex-direction: column;
-    gap: 20vh;
+    gap: 10vh;
   }
 
   .item {
@@ -1763,11 +1763,11 @@ body::-webkit-scrollbar {
   }
 
   .nameheading {
-    height: 50vh !important;
-    width: 100% !important;
-    top: 0%;
+    height: 50vh ;
+    width: 100% ;
     left: 1rem;
-    align-items: center;
+    top: 5rem;
+    align-items: start;
   }
 
   #namelogo h1 {
@@ -1775,13 +1775,12 @@ body::-webkit-scrollbar {
   }
 
   .gallery {
-    top: 50%;
+    top: 0%;
     gap: 4rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0px;
   }
 
   .item {
@@ -2221,11 +2220,13 @@ body::-webkit-scrollbar {
   .eightsilder1 {
     height: 30vh;
     overflow-x: hidden !important;
+    border: 2px solid red;
   }
   .eightsilder2 {
     height: 30vh;
     top: -9.5rem !important;
     overflow-x: hidden !important;
+    border: 2px solid blue;
   }
 
   .eightsilder1 .slidetext1 {
@@ -2400,7 +2401,12 @@ body::-webkit-scrollbar {
 
 
 @media only screen and (min-width: 320px) and (max-width: 375px) {
-.SideNav__Sidebar {
+  #namelogo h1 {
+    font-size: 4.4rem;
+  }
+
+
+  .SideNav__Sidebar {
         -webkit-clip-path: polygon(0px 0px, 100% 0px, 100% 100%, 0px 100%);
         clip-path: polygon(0px 0px, 100% 0px, 100% 100%, 0px 100%);
         top: -100%;
@@ -2685,6 +2691,23 @@ body::-webkit-scrollbar {
   .NavItem__Item {
     text-decoration: none;
     font-family: Nohemi;
+  }
+
+  .item-2 {
+    align-items: start  !important;
+    padding-left: 7vw;
+  }
+  .item-3 {
+    align-items: center !important;
+    padding-top: 7vw;
+  }
+  .item-4 {
+    align-items: end !important;
+    padding-right: 7vw;
+  }
+  .item-5 {
+    align-items: start !important;
+    padding-left: 7vw;
   }
 }
 
