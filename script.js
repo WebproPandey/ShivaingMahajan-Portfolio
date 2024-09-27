@@ -282,39 +282,6 @@ function second() {
 
 // second();
 
-let initialScreenSize = window.innerWidth;
-let resizeTimeout;
-
-window.addEventListener("resize", function () {
-  clearTimeout(resizeTimeout);
-  resizeTimeout = setTimeout(() => {
-    let currentScreenSize = window.innerWidth;
-
-    const smallDeviceMin = 320;
-    const smallDeviceMax = 677;
-    const responsiveBreakpoint = 768;
-    const largeScreenBreakpoint = 1024;
-
-    if (
-      (initialScreenSize < smallDeviceMax &&
-        currentScreenSize >= smallDeviceMax) ||
-      (initialScreenSize >= smallDeviceMax &&
-        currentScreenSize < smallDeviceMax) ||
-      (initialScreenSize < responsiveBreakpoint &&
-        currentScreenSize >= responsiveBreakpoint) ||
-      (initialScreenSize >= responsiveBreakpoint &&
-        currentScreenSize < responsiveBreakpoint) ||
-      (initialScreenSize < largeScreenBreakpoint &&
-        currentScreenSize >= largeScreenBreakpoint) ||
-      (initialScreenSize >= largeScreenBreakpoint &&
-        currentScreenSize < largeScreenBreakpoint)
-    ) {
-      location.reload();
-    }
-
-    initialScreenSize = currentScreenSize;
-  }, 200);
-});
 
 const mobile = 428;
 const tablet = 1024;
@@ -1055,9 +1022,13 @@ function fotter() {
       });
   });
 }
-  fotter()
-
-
+fotter()
+window.addEventListener("resize", function () {
+  clearTimeout(resizeTimeout);
+  resizeTimeout = setTimeout(() => {
+    location.reload();
+  }, 200);
+});
 
 
 
