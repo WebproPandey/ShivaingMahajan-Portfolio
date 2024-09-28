@@ -526,7 +526,7 @@ function third() {
 
   gsap.matchMedia().add("(min-width: 1025px)", function () {
     gsap.to(".slidelogo", {
-      rotation: "360deg",
+      rotation: "180deg",
       y: () => `${window.innerHeight * 0.6}px`, 
       x: () => `${window.innerWidth * 0.4}px`, 
       ease: "power4.out",
@@ -812,7 +812,7 @@ function seven() {
 }
 seven()
 
-function eight() {
+ function eight() {
   ScrollTrigger.matchMedia({
     "(min-width: 768px)": function () {
       var tl = gsap.timeline({

@@ -889,7 +889,7 @@ body::-webkit-scrollbar {
 .slidetext1 {
   color:white;
   z-index: 3;
-  margin-top: -10rem;
+  margin-top: 2.5rem  !important;
 }
 .slidetext::-webkit-scrollbar{
   display: none;
@@ -901,14 +901,14 @@ body::-webkit-scrollbar {
   gap: 2vw;
   flex-wrap: nowrap;
   flex-shrink: 0;
-  animation: textnameslide 200s infinite linear;
+  animation: textnameslide 220s infinite linear;
 }
 @keyframes textnameslide {
-  0%{
+  0% {
       transform: translateX(0%);
   }
   100%{
-      transform: translateX(calc(-100% - 16px));
+      transform: translateX(calc(-100% - 24px));
   }
 }
 .eightsilder .slidetext .movingtext .textband{
@@ -1162,599 +1162,6 @@ body::-webkit-scrollbar {
   color: white;
   font-weight: 500;
 }
-
-@media (min-width: 768px) and (max-width: 1080px) {
-  .header {
-    padding-right: 4vw;
-  }
-
-  .HeaderRight {
-    height: 3vw;
-    width: 5vw;
-  }
-
-  .hamburger {
-    gap: 0.9vw;
-  }
-  .pascdn {
-    position: absolute;
-    left: 2%;
-    max-width: 70%;
-    height: -webkit-fit-content;
-    height: -moz-fit-content;
-    height: 70%;
-    top: 20%;
-  }
-  .SideNav__Sidebar {
-    left: -250vh;
-    background: transparent;
-  }
-
-  .line {
-    height: 0.5vw;
-    width: 4vw;
-  }
-
-  .Noise__NoiseAnimation {
-    width: calc(100% + 50vw);
-    height: calc(100% + 50vw);
-    top: -30vw;
-    left: -30vw;
-    transition: all ease 0.5s;
-    animation: 0.4s steps(6) 0s infinite normal none running mos;
-  }
-
-  .SideNav__InnerWrapper {
-    height: 100%;
-    width: 100%;
-    left: -120vh;
-    background: transparent !important;
-  }
-  .SideNavInnerBG {
-    left: -240vh;
-    width: 100%;
-  }
-
-  .NavigationItems__ItemsWrapper {
-    gap: 0vw;
-    width: 100%;
-  }
-  .NavItem__Wrapper {
-    height: 18vh;
-  }
-  .NavItem__Item {
-    font-size: 5vw;
-  }
-
-  .NavItem__Blinky {
-    border-bottom: 6px solid #aa94e8;
-    display: inline-block;
-    width: 50px;
-    height: 80px;
-    z-index: 1;
-    opacity: 0;
-    visibility: hidden;
-    animation: blink 0.5s infinite alternate;
-  }
-
-  .leftcontent {
-    width: 60%;
-    padding-left: 12vw;
-  }
-  .wfirst {
-    width: 80%;
-  }
-
-  .wfirst p {
-    font-size: 2.2vw;
-    line-height: 4vw;
-  }
-
-  .popup {
-    width: 25vw;
-    left: 60%;
-    transform: translate(-50%, -50%);
-  }
-
-  .rightcontent .uperheading {
-    width: 70%;
-    border-bottom: 1px solid #a668fd;
-    top: 20vw;
-    font-size: 2.2vw;
-    line-height: 4vw;
-  }
-
-  .nameheading {
-    width: fit-content;
-    height: fit-content;
-    left: 8%;
-    top: 18%;
-  }
-
-  .namelogo h1 {
-    font-size: 20vw;
-    text-align: start;
-  }
-
-  .gallery {
-    top: 0%;
-    flex-direction: column;
-    gap: 10vh;
-  }
-
-  .item {
-    height: 100%;
-    width: 50%;
-    padding: 0 8vw;
-    align-items: start;
-    margin-top: 15vw;
-  }
-
-  .item img {
-    width: 100%;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 6px;
-  }
-
-  .item-1 {
-    width: 100%;
-    height: 100%;
-    align-items: center;
-  }
-
-  .second {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 0;
-  }
-
-  .third {
-    margin-top: 5vw;
-  }
-
-  .slidelogo {
-    height: 28vh;
-    width: 28vh;
-  }
-
-  .content div h1 {
-    font-size: 8vw;
-  }
-
-  .instoductionsection {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .leftsection-intro,
-  .rightsection-intro {
-    width: 50%;
-    justify-content: end;
-  }
-
-  .leftsection-intro .text-intro,
-  .rightsection-intro .text-intro {
-    width: 100%;
-    height: 50vh;
-    padding-left: 2vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-  }
-
-  .leftsection-intro .text-intro p,
-  .rightsection-intro .text-intro p {
-    font-size: 24px;
-    font-family: plus;
-    color: white;
-    font-weight: 400;
-    line-height: 3.5vw;
-  }
-
-  .leftsection-intro .clientimg,
-  .rightsection-intro .clientimg {
-    width: 90%;
-    height: 80vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-left: 4vw;
-    margin-top: 12rem;
-  }
-
-  .clientimg img {
-    object-fit: cover;
-    height: 100%;
-    width: 100%;
-  }
-
-  .rightsection-intro .clientimg {
-    justify-content: end;
-    padding-right: 0vw;
-    gap: 4vw;
-    margin-top: 0vw;
-  }
-
-  .crossclippath {
-    height: 30vh;
-  }
-
-  .crossclippath .roatingsvg {
-    height: 20vh;
-    width: 20vh;
-    margin-top: 0vw;
-  }
-
-  .fourth {
-    width: 100%;
-    margin-top: 5vh;
-  }
-
-  .fourthvideopin {
-    flex-direction: row;
-    height: 100vh;
-  }
-
-  .fourthvideopin .leftsection,
-  .rightsection {
-    width: 100%;
-  }
-
-  .fourthvideopin .rightsection {
-    height: 70%;
-  }
-
-  .fourthvideopin .leftsection {
-    height: 100%;
-    overflow: hidden;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .videoinfo {
-    flex-direction: column;
-    height: 100%;
-    display: flex;
-    justify-content: end;
-    height: 50%;
-    margin-bottom: 5rem;
-    padding-left: 4vw;
-  }
-
-  .leftsection .videoinfo .firstheading h1,
-  .thirdheading h1 {
-    font-size: 2.4vw;
-    font-family: "plus";
-  }
-
-  .leftsection .videoinfo .secondpera p {
-    font-size: 4.7vw;
-    font-family: "plus";
-    font-weight: 600;
-    line-height: 5vw;
-  }
-
-  .rightsection .videobox {
-    height: 100%;
-    width: 90%;
-  }
-
-  .rightsection .videobox .video {
-    height: 100%;
-    width: 100%;
-  }
-
-  .rightsection .videobox .video video {
-    width: 100%;
-    object-fit: cover;
-    object-position: center;
-  }
-
-  .countdown {
-    height: 60vh;
-    width: 100%;
-    justify-content: center;
-    align-items: start;
-    flex-wrap: wrap;
-    margin-top: 5rem;
-  }
-
-  .countdown .count {
-    height: 20%;
-    min-width: 30%;
-    margin-right: 5vw;
-  }
-
-  .countdown .count span {
-    font-size: 7rem;
-    display: inline-block;
-  }
-
-  .count h1 {
-    font-size: 1.5rem;
-  }
-
-  .fiveth {
-    display: block;
-    background-color: #16181e;
-  }
-
-  .fivethleftside,
-  .fivethrightside {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .fivethleftside {
-    height: 30vh !important;
-    display: flex;
-    justify-content: center;
-    align-items: end;
-    background-color: black;
-  }
-
-  .slidelineboxwraper {
-    height: 50%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-transform: capitalize;
-    border-top: 0.1px solid #dadada;
-  }
-
-  .slidelinebox {
-    margin-left: 0vw;
-    font-size: 3.8vw;
-    font-family: "plus";
-  }
-
-  .fivethrightside {
-    height: 70vh !important;
-    overflow: hidden;
-  }
-
-  .fivethrightside .rightsidesilde {
-    padding-right: 0vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .rightwraper .leftsvg {
-    height: 18%;
-    width: 15%;
-    margin-top: 0vw;
-  }
-
-  .rightwraper .leftsvg img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-  }
-
-  .rightcontet {
-    width: 100%;
-  }
-
-  .rightcontet h1 {
-    font-size: 1.8rem;
-    font-family: "Nohemi";
-    font-weight: 700;
-    text-transform: capitalize;
-    margin-bottom: 2vw;
-    color: white;
-  }
-
-  .rightcontet p {
-    font-size: 1.3rem;
-    font-family: "Nohemi";
-    color: white;
-    line-height: 2.5rem;
-  }
-
-  .sixthheading,
-  .blandoverlay {
-    gap: 2rem;
-  }
-
-  .sixthheading .heading2,
-  .blandoverlay .heading2 {
-    gap: 2rem;
-    overflow: hidden;
-  }
-
-  .heading1,
-  .heading2,
-  .heading3 {
-    font-size: 6rem;
-    letter-spacing: -3px;
-  }
-
-  .sixthheading .heading2 .midheadingimg,
-  .blandoverlay .heading2 .midheadingimg {
-    height: 25vh;
-    width: 30vh;
-  }
-
-  .sixthheading .heading2 .midheadingimg img,
-  .blandoverlay .heading2 .midheadingimg img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-  }
-
-  .seventh {
-    height: auto;
-    flex-direction: column;
-  }
-
-  .leftphoneimg {
-    margin-top: 5vw;
-  }
-
-  .rightpera {
-    width: 100%;
-    height: 70vh;
-    padding-left: 3vw;
-    margin-bottom: 15rem !important;
-  }
-
-  .rightpera h1 {
-    font-size: 3vw;
-    font-family: "plus";
-    font-weight: 900;
-  }
-
-  .rightpera p {
-    font-size: 3.2vw;
-    line-height: 5vw;
-    font-family: "plus";
-    font-weight: 500;
-  }
-
-  .eightsilder1 {
-    height: 50vh;
-  }
-  .eightsilder2 {
-    height: 50vh;
-    overflow-x: hidden;
-    top:-15.5rem;  
-  }
-  .slidetext1 {
-    margin-top: 0rem;
-    overflow-x: hidden;
-  }
-  .eightsilder2 .slidetext2 {
-    margin-top: 4.5rem;
-  }
-  .eightsilder .slidetext .movingtext .shapec {
-    width: 15vh;
-    height: 15vh;
-  }
-  .eightswiperwraper {
-    height: auto;
-    width: 100%;
-    margin-top: 0vw;
-  }
-
-  .swiper-slide {
-    padding: 10vw 4vw;
-  }
-
-  .paaratestmn {
-    font-size: 4vw;
-    line-height: 5vw;
-    letter-spacing: -1px;
-  }
-
-  .nameclient,
-  .paceclient {
-    margin-top: 10vw;
-    font-size: 3vw;
-  }
-
-  .paceclient {
-    margin-top: 0vw;
-    margin-bottom: 10vw;
-  }
-
-  .swipehandler {
-    bottom: 15%;
-    width: 8rem;
-    height: 3.6rem;
-  }
-
-  .fotter {
-    height: 60vh;
-    padding: 0px 5vw;
-  }
-
-  .uppercontent {
-    height: 70%;
-  }
-
-  .uppercontent .fotternamelogo {
-    justify-content: center;
-    height: 100%;
-  }
-
-  .uppercontent .fotternamelogo h1 {
-    font-size: 2.3rem;
-    font-weight: 600;
-  }
-
-  .fottercontact {
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    gap: 4vw;
-  }
-
-  .fottercontact .left h1,
-  .fottercontact .right h1 {
-    font-size: 0.9rem;
-    letter-spacing: 1px;
-  }
-
-  .fottercontact .left a {
-    font-size: 0.9rem;
-    font-weight: 500;
-  }
-
-  .fottercontact .right {
-    padding-top: 2.4rem;
-  }
-
-  .fottercontact .right .links {
-    grid-template-columns: repeat(1, 1fr);
-    gap: 2vw;
-  }
-
-  .fottercontact .right .links a {
-    height: 0.9rem;
-    overflow: hidden;
-  }
-
-  .fottercontact .right .links a h1 {
-    font-size: 0.9rem;
-    font-weight: 500;
-  }
-
-  .lowercontent {
-    height: 25%;
-    justify-content: space-between;
-    align-items: center;
-    gap: 3rem;
-  }
-
-  .lowercontent .left {
-    gap: 2rem;
-    justify-content: space-between;
-  }
-
-  .lowercontent .left a {
-    height: 0.9rem;
-    overflow: hidden;
-  }
-
-  .lowercontent .left a h1 {
-    font-size: 0.9rem;
-    font-weight: 500;
-  }
-
-  .lowercontent .right p {
-    font-size: 0.8rem;
-    color: white;
-    font-weight: 500;
-  }
-}
-
 
 
 @media (min-width: 320px) and (max-width: 767px) {
@@ -2220,19 +1627,17 @@ body::-webkit-scrollbar {
   .eightsilder1 {
     height: 30vh;
     overflow-x: hidden !important;
-    border: 2px solid red;
   }
   .eightsilder2 {
     height: 30vh;
     top: -9.5rem !important;
     overflow-x: hidden !important;
-    border: 2px solid blue;
   }
 
   .eightsilder1 .slidetext1 {
     transform: rotate(-7deg);
     gap: 2rem;
-    margin-top: -15rem;
+    margin-top: -15rem !important;
   }
 
  
@@ -2634,6 +2039,7 @@ body::-webkit-scrollbar {
 
 /* complete */
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
+  
   .hamburger {
     width: 3.5rem !important;
     height: 3.5rem !important;
@@ -2709,9 +2115,610 @@ body::-webkit-scrollbar {
     align-items: start !important;
     padding-left: 7vw;
   }
+
+  .Header__Wrapper {
+    padding-right: 2.5vw;
+  }
+
+  .HeaderRight {
+    height: 3vw;
+    width: 5vw;
+  }
+
+  .hamburger {
+    gap: 0.9vw;
+  }
+  .pascdn {
+    position: absolute;
+    left: 2%;
+    max-width: 70%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: 70%;
+    top: 20%;
+  }
+  .SideNav__Sidebar {
+    left: -250vh;
+    background: transparent;
+  }
+
+  .line {
+    height: 0.5vw;
+    width: 4vw;
+  }
+
+  .Noise__NoiseAnimation {
+    width: calc(100% + 50vw);
+    height: calc(100% + 50vw);
+    top: -30vw;
+    left: -30vw;
+    transition: all ease 0.5s;
+    animation: 0.4s steps(6) 0s infinite normal none running mos;
+  }
+
+  .SideNav__InnerWrapper {
+    height: 100%;
+    width: 100%;
+    left: -120vh;
+    background: transparent !important;
+  }
+  .SideNavInnerBG {
+    left: -240vh;
+    width: 100%;
+  }
+
+  .NavigationItems__ItemsWrapper {
+    gap: 0vw;
+    width: 100%;
+  }
+  .NavItem__Wrapper {
+    height: 18vh;
+  }
+  .NavItem__Item {
+    font-size: 5vw;
+  }
+
+  .NavItem__Blinky {
+    border-bottom: 6px solid #aa94e8;
+    display: inline-block;
+    width: 50px;
+    height: 80px;
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+    animation: blink 0.5s infinite alternate;
+  }
+
+  .leftcontent {
+    width: 60%;
+    padding-left: 12vw;
+  }
+  .wfirst {
+    width: 80%;
+  }
+
+  .wfirst p {
+    font-size: 2.2vw;
+    line-height: 4vw;
+  }
+
+  .popup {
+    width: 25vw;
+    left: 60%;
+    transform: translate(-50%, -50%);
+  }
+
+  .rightcontent .uperheading {
+    width: 70%;
+    border-bottom: 1px solid #a668fd;
+    top: 10%;
+    font-size: 2.2vw;
+    line-height: 4vw;
+  }
+
+  .nameheading {
+    width: fit-content;
+    height: fit-content;
+    left: 8%;
+    top: 18%;
+  }
+
+  .namelogo h1 {
+    font-size: 20vw;
+    text-align: start;
+  }
+
+  .gallery {
+    top: 0%;
+    flex-direction: column;
+    gap: 10vh;
+  }
+
+  .item {
+    height: 100%;
+    width: 50%;
+    padding: 0 8vw;
+    align-items: start;
+    margin-top: 15vw;
+  }
+
+  .item img {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 6px;
+  }
+
+  .item-1 {
+    width: 100%;
+    height: 100%;
+    align-items: center;
+  }
+
+  .second {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+  }
+
+  .third {
+    margin-top: 5vw;
+  }
+
+  .slidelogo {
+    height: 28vh;
+    width: 28vh;
+  }
+
+  .content div h1 {
+    font-size: 8vw;
+  }
+
+  .instoductionsection {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .leftsection-intro,
+  .rightsection-intro {
+    width: 50%;
+    justify-content: end;
+  }
+
+  .leftsection-intro .text-intro,
+  .rightsection-intro .text-intro {
+    width: 100%;
+    height: 50vh;
+    padding-left: 2vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+  }
+
+  .leftsection-intro .text-intro p,
+  .rightsection-intro .text-intro p {
+    font-size: 24px;
+    font-family: plus;
+    color: white;
+    font-weight: 400;
+    line-height: 3.5vw;
+  }
+
+  .leftsection-intro .clientimg,
+  .rightsection-intro .clientimg {
+    width: 90%;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 4vw;
+    margin-top: 12rem;
+  }
+
+  .clientimg img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+
+  .rightsection-intro .clientimg {
+    justify-content: end;
+    padding-right: 0vw;
+    gap: 4vw;
+    margin-top: 0vw;
+  }
+
+  .crossclippath {
+    height: 30vh;
+  }
+
+  .crossclippath .roatingsvg {
+    height: 20vh;
+    width: 20vh;
+    margin-top: 0vw;
+  }
+
+  .fourth {
+    width: 100%;
+    margin-top: 5vh;
+  }
+
+  .fourthvideopin {
+    flex-direction: row;
+    height: 100vh;
+  }
+
+  .fourthvideopin .leftsection,
+  .rightsection {
+    width: 100%;
+  }
+
+  .fourthvideopin .rightsection {
+    height: 70%;
+  }
+
+  .fourthvideopin .leftsection {
+    height: 100%;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .videoinfo {
+    flex-direction: column;
+    height: 100%;
+    display: flex;
+    justify-content: end;
+    height: 50%;
+    margin-bottom: 5rem;
+    padding-left: 4vw;
+  }
+
+  .leftsection .videoinfo .firstheading h1,
+  .thirdheading h1 {
+    font-size: 2.4vw;
+    font-family: "plus";
+  }
+
+  .leftsection .videoinfo .secondpera p {
+    font-size: 4vw;
+    font-family: "plus";
+    font-weight: 600;
+    line-height: 5vw;
+  }
+
+  .rightsection .videobox {
+    height: 100%;
+    width: 90%;
+  }
+
+  .rightsection .videobox .video {
+    height: 100%;
+    width: 100%;
+  }
+
+  .rightsection .videobox .video video {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .countdown {
+    height: 60vh;
+    width: 100%;
+    justify-content: center;
+    align-items: start;
+    flex-wrap: wrap;
+    margin-top: 5rem;
+  }
+
+  .countdown .count {
+    height: 20%;
+    min-width: 30%;
+    margin-right: 5vw;
+  }
+
+  .countdown .count span {
+    font-size: 7rem;
+    display: inline-block;
+  }
+
+  .count h1 {
+    font-size: 1.5rem;
+  }
+
+  .fiveth {
+    display: block;
+    background-color: #16181e;
+  }
+
+  .fivethleftside,
+  .fivethrightside {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .fivethleftside {
+    height: 30vh !important;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    background-color: black;
+  }
+
+  .slidelineboxwraper {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: capitalize;
+    border-top: 0.1px solid #dadada;
+  }
+
+  .slidelinebox {
+    margin-left: 0vw;
+    font-size: 3.8vw;
+    font-family: "plus";
+  }
+
+  .fivethrightside {
+    height: 70vh !important;
+    overflow: hidden;
+  }
+
+  .fivethrightside .rightsidesilde {
+    padding-right: 0vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .rightwraper .leftsvg {
+    height: 18%;
+    width: 15%;
+    margin-top: 0vw;
+  }
+
+  .rightwraper .leftsvg img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .rightcontet {
+    width: 100%;
+  }
+
+  .rightcontet h1 {
+    font-size: 1.8rem;
+    font-family: "Nohemi";
+    font-weight: 700;
+    text-transform: capitalize;
+    margin-bottom: 2vw;
+    color: white;
+  }
+
+  .rightcontet p {
+    font-size: 1.3rem;
+    font-family: "Nohemi";
+    color: white;
+    line-height: 2.5rem;
+  }
+
+  .sixthheading,
+  .blandoverlay {
+    gap: 2rem;
+  }
+
+  .sixthheading .heading2,
+  .blandoverlay .heading2 {
+    gap: 2rem;
+    overflow: hidden;
+  }
+
+  .heading1,
+  .heading2,
+  .heading3 {
+    font-size: 6rem;
+    letter-spacing: -3px;
+  }
+
+  .sixthheading .heading2 .midheadingimg,
+  .blandoverlay .heading2 .midheadingimg {
+    height: 25vh;
+    width: 30vh;
+  }
+
+  .sixthheading .heading2 .midheadingimg img,
+  .blandoverlay .heading2 .midheadingimg img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .seventh {
+    height: auto;
+    flex-direction: column;
+  }
+
+  .leftphoneimg {
+    margin-top: 5vw;
+  }
+
+  .rightpera {
+    width: 100%;
+    height: 70vh;
+    padding-left: 3vw;
+    margin-bottom: 15rem !important;
+  }
+
+  .rightpera h1 {
+    font-size: 3vw;
+    font-family: "plus";
+    font-weight: 900;
+  }
+
+  .rightpera p {
+    font-size: 3.2vw;
+    line-height: 5vw;
+    font-family: "plus";
+    font-weight: 500;
+  }
+
+  .eightsilder1 {
+    height: 50vh;
+  }
+  .eightsilder2 {
+    height: 50vh;
+    overflow-x: hidden;
+    top:-15.5rem;  
+  }
+  .slidetext1 {
+    margin-top: 0rem;
+    overflow-x: hidden;
+  }
+  .eightsilder2 .slidetext2 {
+    margin-top: 4.5rem;
+  }
+
+  .eightsilder .slidetext .movingtext .shapec {
+    width: 15vh;
+    height: 15vh;
+  }
+  .eightswiperwraper {
+    height: auto;
+    width: 100%;
+    margin-top: 0vw;
+  }
+
+  .swiper-slide {
+    padding: 10vw 4vw;
+  }
+
+  .paaratestmn {
+    font-size: 4vw;
+    line-height: 5vw;
+    letter-spacing: -1px;
+  }
+
+  .nameclient,
+  .paceclient {
+    margin-top: 10vw;
+    font-size: 3vw;
+  }
+
+  .paceclient {
+    margin-top: 0vw;
+    margin-bottom: 10vw;
+  }
+
+  .swipehandler {
+    bottom: 15%;
+    width: 8rem;
+    height: 3.6rem;
+  }
+
+  .fotter {
+    height: 60vh;
+    padding: 0px 5vw;
+  }
+
+  .uppercontent {
+    height: 70%;
+  }
+
+  .uppercontent .fotternamelogo {
+    justify-content: center;
+    height: 100%;
+  }
+
+  .uppercontent .fotternamelogo h1 {
+    font-size: 2.3rem;
+    font-weight: 600;
+  }
+
+  .fottercontact {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 4vw;
+  }
+
+  .fottercontact .left h1,
+  .fottercontact .right h1 {
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+  }
+
+  .fottercontact .left a {
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  .fottercontact .right {
+    padding-top: 2.4rem;
+  }
+
+  .fottercontact .right .links {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2vw;
+  }
+
+  .fottercontact .right .links a {
+    height: 0.9rem;
+    overflow: hidden;
+  }
+
+  .fottercontact .right .links a h1 {
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  .lowercontent {
+    height: 25%;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  .lowercontent .left {
+    gap: 2rem;
+    justify-content: space-between;
+  }
+
+  .lowercontent .left a {
+    height: 0.9rem;
+    overflow: hidden;
+  }
+
+  .lowercontent .left a h1 {
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  .lowercontent .right p {
+    font-size: 0.8rem;
+    color: white;
+    font-weight: 500;
+  }
 }
 
+
+
+
 @media only screen and (min-width: 1099px) and (max-width: 1199px) {
+  .hamburger{
+   background-color: red;
+  }
+  .hamburger .line {
+    height: 0.3rem !important;
+    
+    }
     .NavigationItems__Wrapper {
         width: 100%;
         font-size: 5rem;
@@ -2737,7 +2744,7 @@ body::-webkit-scrollbar {
   }
   .item img {
     width: 50%;
-    height: 100%;
+    height: 80%;
   }
   .item-1 {
     align-items: center;
@@ -2762,11 +2769,12 @@ body::-webkit-scrollbar {
     align-items: end;
     padding-right: 7vw;
     padding-top: 7vw;
-    margin-bottom: 4rem;
   }
   .item-5 {
     align-items: start;
     padding-left: 7vw;
+    margin-top: 4rem;
+
   }
 }
 
@@ -3109,6 +3117,56 @@ body::-webkit-scrollbar {
     background: url(/static/Black-Background-Tile-2x-157406eâ€¦.webp)
       rgb(18, 22, 19);
   }
+  .pascdn{
+    top:10%;
+  }
+  .sixthheading,
+  .blandoverlay {
+    gap: 2rem;
+  }
+
+  .sixthheading .heading2,
+  .blandoverlay .heading2 {
+    gap: 2rem;
+    overflow: hidden;
+  }
+
+  .heading1,
+  .heading2,
+  .heading3 {
+    font-size: 8rem;
+    letter-spacing: -3px;
+  }
+
+  .sixthheading .heading2 .midheadingimg,
+  .blandoverlay .heading2 .midheadingimg {
+    height: 35vh;
+    width: 45vh;
+  }
+
+  .sixthheading .heading2 .midheadingimg img,
+  .blandoverlay .heading2 .midheadingimg img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .eightsilder1 {
+    height: 50vh;
+  }
+  .eightsilder2 {
+    height: 50vh;
+    overflow-x: hidden;
+    top:-15.5rem;  
+  }
+  .slidetext1 {
+    margin-top: 0rem;
+    overflow-x: hidden;
+  }
+  .eightsilder2 .slidetext2 {
+    margin-top: 4.5rem;
+  }
+  
 }
 @media only screen and (min-width: 1441px) and (max-width: 1600px) {
   .SideNav__Sidebar {
@@ -3137,9 +3195,24 @@ body::-webkit-scrollbar {
   .BlockHeaderHero_heading {
     font-size: 14rem;
   }
+  .eightsilder1 {
+    height: 50vh;
+  }
+  .eightsilder2 {
+    height: 50vh;
+    overflow-x: hidden;
+    top:-15.5rem;  
+  }
+  .slidetext1 {
+    margin-top: 0rem;
+    overflow-x: hidden;
+  }
+  .eightsilder2 .slidetext2 {
+    margin-top: 4.5rem;
+  }
 }
 
-@media only screen and (min-width: 1601px) {
+@media only screen and (min-width: 1601px) and  (max-width: 2560px)  {
   .SideNav__Sidebar {
     -webkit-clip-path: polygon(0px 0px, 100% 0px, 100% 100%, 0px 100%);
     clip-path: polygon(0px 0px, 100% 0px, 100% 100%, 0px 100%);
@@ -3163,6 +3236,28 @@ body::-webkit-scrollbar {
     transition: all 0.8s cubic-bezier(0.79, 0.33, 0.45, 0.85);
     z-index: 999;
   }
+  .NavItem__Item{
+    text-decoration: none;
+    font-family: Nohemi;
+  }
+  .eightsilder1 {
+    height: 100vh !important;
+  }
+  .eightsilder2 {
+    height: 50vh;
+    overflow-x: hidden;
+    top:-26rem ; 
+    border: 1px solid red; 
+
+  }
+  .slidetext1 {
+    margin-top: -30rem !important;
+    overflow-x: hidden;
+  }
+  .eightsilder2 .slidetext2 {
+    margin-top: 4.5rem;
+  }
+
 }
 
 
