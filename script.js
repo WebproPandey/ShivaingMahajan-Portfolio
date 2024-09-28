@@ -500,8 +500,8 @@ function third() {
     .matchMedia()
     .add("(min-width: 768px) and (max-width: 1024px)", function () {
       gsap.to(".slidelogo", {
-        y: () => `${window.innerHeight * 0.6}px`,
-        x: () => `${window.innerWidth * 0.4}px`,
+        y: `${window.innerHeight * 0.6}px`,
+        x: `${window.innerWidth * 0.4}px`,
         rotation: "180deg",
         duration: 3,
         ease: "power4.out",

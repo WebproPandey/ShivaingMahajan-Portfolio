@@ -527,8 +527,8 @@ body::-webkit-scrollbar {
 }
 
 .fourthsectionslider .fourthslidetext .fourthmovingtext img {
-  height: 20vh;
-  width: 20vh;
+  height: 15vh;
+  width: 15vh;
 }
 .fourthslidetext .fourthmovingtext .textstrok {
   font-size: 3rem;
@@ -2757,9 +2757,9 @@ body::-webkit-scrollbar {
 
   .rightpera {
     width: 100%;
-    height: 70vh;
-    padding-left: 3vw;
-    margin-bottom: 15rem !important;
+    height: auto;
+    padding:0rem  5rem;
+    margin-bottom: 5rem !important;
   }
 
   .rightpera h1 {
@@ -2770,25 +2770,26 @@ body::-webkit-scrollbar {
 
   .rightpera p {
     font-size: 3.2vw;
-    line-height: 5vw;
+    line-height: 3rem;
     font-family: "plus";
     font-weight: 500;
   }
 
   .eightsilder1 {
     height: 50vh;
+    overflow-x: hidden;
   }
   .eightsilder2 {
     height: 50vh;
     overflow-x: hidden;
-    top:-15.5rem;  
+    top:-16rem;
   }
   .slidetext1 {
-    margin-top: 0rem;
+    margin-top: -4rem !important;
     overflow-x: hidden;
   }
   .eightsilder2 .slidetext2 {
-    margin-top: 4.5rem;
+    margin-top: 1.5rem;
   }
 
   .eightsilder .slidetext .movingtext .shapec {
@@ -2802,7 +2803,7 @@ body::-webkit-scrollbar {
   }
 
   .swiper-slide {
-    padding: 10vw 4vw;
+    padding: 10vw 4rem;
   }
 
   .paaratestmn {
@@ -2823,7 +2824,7 @@ body::-webkit-scrollbar {
   }
 
   .swipehandler {
-    bottom: 15%;
+    bottom: 8%;
     width: 8rem;
     height: 3.6rem;
   }
@@ -2917,9 +2918,7 @@ body::-webkit-scrollbar {
 
 
 @media only screen and (min-width: 1099px) and (max-width: 1199px) {
-  .hamburger{
-   background-color: red;
-  }
+ 
   .hamburger .line {
     height: 0.3rem !important;
     
