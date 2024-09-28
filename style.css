@@ -2995,7 +2995,7 @@ body::-webkit-scrollbar {
   }
   .hamburger .line {
     width: 100%;
-    height: 0.5rem !important;
+    height: 0.4rem ;
     background-color: rgb(153 139 139);
     position: absolute;
     left: 0%;
@@ -3478,7 +3478,7 @@ body::-webkit-scrollbar {
 }
 .hamburger .line {
   width: 100%;
-  height: 0.8rem;
+  height: 0.5rem;
   background-color: rgb(153 139 139);
   position: absolute;
   left: 0%;
