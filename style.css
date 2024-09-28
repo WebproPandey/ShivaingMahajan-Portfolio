@@ -47,7 +47,9 @@ body {
 body::-webkit-scrollbar {
   display: none;
 }
-
+.Container{
+  opacity: 0;
+}
 #loader {
   height: 100vh;
   width: 100%;

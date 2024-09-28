@@ -35,8 +35,8 @@ function first() {
     tl.call(function () {
       document.getElementById("loader").style.display = "none";
     });
-    tl.from(".Container", {
-      opacity: 0,
+    tl.to(".Container", {
+      opacity:1 ,
       ease: "power3.inOut",
     })
       .from(
