@@ -15,6 +15,9 @@ function raf(time) {
 requestAnimationFrame(raf);
 
 function first() {
+  document.querySelector(".loadervideo").addEventListener("ended", function () {
+  var tl = gsap.timeline();
+
   var namelog = document.querySelectorAll(".namelogo h1");
   var allLetters = [];
 
@@ -27,30 +30,35 @@ function first() {
     allLetters.push(...name.querySelectorAll(".letterspan"));
   });
 
-  var tl = gsap.timeline();
-  tl.from(".Container", {
-    opacity: 0,
-    ease: "power3.inOut",
-  })
-    .from(
-      allLetters,
-      {
-        y: -50,
-        stagger: {
-          amount: 0.5,
+ 
+
+    tl.call(function () {
+      document.getElementById("loader").style.display = "none";
+    });
+    tl.from(".Container", {
+      opacity: 0,
+      ease: "power3.inOut",
+    })
+      .from(
+        allLetters,
+        {
+          y: -50,
+          stagger: {
+            amount: 0.5,
+          },
+          opacity: 0,
+          duration: 1,
+          stagger: 0.1,
+          ease: "power3.inOut",
         },
+        "a"
+      )
+      .from(".gallery", {
         opacity: 0,
         duration: 1,
-        stagger: 0.1,
-        ease: "power3.inOut",
-      },
-      "a"
-    )
-    .from(".gallery", {
-      opacity: 0,
-      duration: 1,
-      ease: "power4.inOut",
-    });
+        ease: "power4.inOut",
+      });
+  });
 
   var gallery = document.querySelector(".gallery");
 
@@ -114,25 +122,23 @@ function first() {
       }
     );
 
-// gsap.matchMedia().add("(min-width: 320px) and (max-width: 767px)", function() {
-//   var tl2 = gsap.timeline({
-//     scrollTrigger: {
-//       trigger: "#home",
-//       start: "top top",
-//       end: "+=" + gallery.offsetHeight,
-//       scrub: 0.8,
-//       pin: true,
-//       markers: true,
-//     },
-//   });
-//   tl2.to("#namelogo h1", {
-//     fontSize: "1.8rem",
-//     ease: "Power4.Out",
-//     duration: 12,
-//   }, "q");
-// });
-
-
+  // gsap.matchMedia().add("(min-width: 320px) and (max-width: 767px)", function() {
+  //   var tl2 = gsap.timeline({
+  //     scrollTrigger: {
+  //       trigger: "#home",
+  //       start: "top top",
+  //       end: "+=" + gallery.offsetHeight,
+  //       scrub: 0.8,
+  //       pin: true,
+  //       markers: true,
+  //     },
+  //   });
+  //   tl2.to("#namelogo h1", {
+  //     fontSize: "1.8rem",
+  //     ease: "Power4.Out",
+  //     duration: 12,
+  //   }, "q");
+  // });
 }
 
 first();
@@ -167,7 +173,6 @@ function second() {
 }
 
 second();
-
 
 const mobile = 428;
 const tablet = 1024;
@@ -464,6 +469,7 @@ function hambuger() {
 
     tl3.from(linkspans, {
       y: "100%",
+      opacity: 0,
       duration: 1,
       delay: 1.8,
       stagger: { amount: 0.9 },
@@ -475,7 +481,6 @@ function hambuger() {
 
     function toggleAnimation() {
       if (flag === 0) {
-        console.log("hello");
         tl3.play();
         flag = 1;
       } else {
@@ -491,44 +496,45 @@ function hambuger() {
 hambuger();
 
 function third() {
-  gsap.matchMedia().add("(min-width: 768px) and (max-width: 1024px)", function () {
-    gsap.to(".slidelogo", {
-      y: () => `${window.innerHeight * 0.6}px`, 
-      x: () => `${window.innerWidth * 0.4}px`,
-      rotation: "180deg",
-      duration: 3,
-      ease: "power4.out",
-      scrollTrigger: {
-        trigger: ".third",
-        scroller: "body",
-        start: "10% 30%",
-        end: "20% 0%",
-        scrub: 1,
-        onLeave: () => {
-          gsap.to(".slidelogo", {
-            y: () => `${window.innerHeight * 2.3}px`,
-            x: () => `${-window.innerWidth * 0.45}px`, 
-            rotation: "-360deg",
-            ease: "power4.out",
-            scrollTrigger: {
-              trigger: ".third",
-              scroller: "body",
-              start: "30% 30%",
-              end: "100% 0%",
-              scrub: 1,
-            },
-          });
+  gsap
+    .matchMedia()
+    .add("(min-width: 768px) and (max-width: 1024px)", function () {
+      gsap.to(".slidelogo", {
+        y: () => `${window.innerHeight * 0.6}px`,
+        x: () => `${window.innerWidth * 0.4}px`,
+        rotation: "180deg",
+        duration: 3,
+        ease: "power4.out",
+        scrollTrigger: {
+          trigger: ".third",
+          scroller: "body",
+          start: "10% 30%",
+          end: "20% 0%",
+          scrub: 1,
+          onLeave: () => {
+            gsap.to(".slidelogo", {
+              y: () => `${window.innerHeight * 2.3}px`,
+              x: () => `${-window.innerWidth * 0.45}px`,
+              rotation: "-360deg",
+              ease: "power4.out",
+              scrollTrigger: {
+                trigger: ".third",
+                scroller: "body",
+                start: "30% 30%",
+                end: "100% 0%",
+                scrub: 1,
+              },
+            });
+          },
         },
-      },
+      });
     });
-  });
-
 
   gsap.matchMedia().add("(min-width: 1025px)", function () {
     gsap.to(".slidelogo", {
       rotation: "180deg",
-      y: () => `${window.innerHeight * 0.6}px`, 
-      x: () => `${window.innerWidth * 0.4}px`, 
+      y: `${window.innerHeight * 0.6}px`,
+      x: `${window.innerWidth * 0.4}px`,
       ease: "power4.out",
       scrollTrigger: {
         trigger: ".third",
@@ -539,8 +545,8 @@ function third() {
         onLeave: () => {
           gsap.to(".slidelogo", {
             rotation: "-360deg",
-            y: () => `${window.innerHeight * 2.1}px`, 
-            x: () => `${-window.innerWidth * 0.45}px`, 
+            y: () => `${window.innerHeight * 2.1}px`,
+            x: () => `${-window.innerWidth * 0.45}px`,
             ease: "power4.out",
             scrollTrigger: {
               trigger: ".third",
@@ -607,212 +613,274 @@ function third() {
       scrub: 1,
     },
   });
-  gsap.to(".marquee_part",{
-    xPercent: -100,
-    repeat: -1,
-    duration: 20,
-    ease: "linear",
-  })
-  .totalProgress(0.5)
-  gsap.set( ".marquee_part",{xPercent:-50})
+  gsap
+    .to(".marquee_part", {
+      xPercent: -100,
+      repeat: -1,
+      duration: 20,
+      ease: "linear",
+    })
+    .totalProgress(0.5);
+  gsap.set(".marquee_part", { xPercent: -50 });
 }
-third() 
+third();
 function fourth() {
   var tl = gsap.timeline({
-      scrollTrigger: {
-          trigger: ".fourthvideopin",
-          scroller: "body",
-          start: "0% 0%",
-          end: "bottom -100%",
-          scrub: true,
-          pin: true,
-      }
+    scrollTrigger: {
+      trigger: ".fourthvideopin",
+      scroller: "body",
+      start: "0% 0%",
+      end: "bottom -100%",
+      scrub: true,
+      pin: true,
+    },
   });
-  tl.to(".videoinfonext1 ", {
+  tl.to(
+    ".videoinfonext1 ",
+    {
       y: "-100vh",
       duration: 3,
-      ease: "Power3.out"
-  }, "a")
-  .from(".videonext2", {
-      y: "100vh",
-      duration: 3,
-      ease: "Power4.out"
-  }, "a")
-  .from(".videoinfonext2 ", {
-      y: "100vh",
-      duration: 3,
-      ease: "Power4.out"
-  }, "a")
-  .to(".videoinfonext2 ", {
-      y: "-100vh",
-      duration: 3,
-      ease: "Power3.out"
-  }, "b")
-  .from(".videonext3", {
-      y: "100vh",
-      duration: 3,
-      ease: "Power4.out"
-  }, "b")
-  .from(".videoinfonext3 ", {
-      y: "100vh",
-      duration: 3,
-      ease: "Power4.out"
-  }, "b")
-  .to(".videoinfonext3 ", {
-      y: "-100vh",
-      duration: 3,
-      ease: "Power3.out"
-  }, "c")
-  .from(".videonext4", {
-      y: "100vh",
-      duration: 3,
-      ease: "Power4.out"
-  }, "c")
-  .from(".videoinfonext4 ", {
-      y: "100vh",
-      duration: 3,
-      ease: "Power4.out"
-  }, "c");
-  
-  function animateCounts() {
-      document.querySelectorAll('.count').forEach((countElement) => {
-          let count = { value: 0 }; 
-          let target = parseInt(countElement.getAttribute('data-count'));
-          let span = countElement.querySelector('span');
-  
-          gsap.to(count, {
-              value: target, 
-              duration: 3, 
-              ease: "power4.out", 
-              onUpdate: () => {
-                  span.textContent = Math.floor(count.value); 
-              }
-          });
-      });
-  }
-  
-  document.addEventListener('DOMContentLoaded', () => {
-      gsap.registerPlugin(ScrollTrigger);
-  
-      ScrollTrigger.create({
-          trigger: ".countdown",
-          scroller: "body",
-          start: "top 80%", 
-          end: "50% 75%",   
-          once: true,
-          onEnter: animateCounts, 
-      });
-  })
+      ease: "Power3.out",
+    },
+    "a"
+  )
+    .from(
+      ".videonext2",
+      {
+        y: "100vh",
+        duration: 3,
+        ease: "Power4.out",
+      },
+      "a"
+    )
+    .from(
+      ".videoinfonext2 ",
+      {
+        y: "100vh",
+        duration: 3,
+        ease: "Power4.out",
+      },
+      "a"
+    )
+    .to(
+      ".videoinfonext2 ",
+      {
+        y: "-100vh",
+        duration: 3,
+        ease: "Power3.out",
+      },
+      "b"
+    )
+    .from(
+      ".videonext3",
+      {
+        y: "100vh",
+        duration: 3,
+        ease: "Power4.out",
+      },
+      "b"
+    )
+    .from(
+      ".videoinfonext3 ",
+      {
+        y: "100vh",
+        duration: 3,
+        ease: "Power4.out",
+      },
+      "b"
+    )
+    .to(
+      ".videoinfonext3 ",
+      {
+        y: "-100vh",
+        duration: 3,
+        ease: "Power3.out",
+      },
+      "c"
+    )
+    .from(
+      ".videonext4",
+      {
+        y: "100vh",
+        duration: 3,
+        ease: "Power4.out",
+      },
+      "c"
+    )
+    .from(
+      ".videoinfonext4 ",
+      {
+        y: "100vh",
+        duration: 3,
+        ease: "Power4.out",
+      },
+      "c"
+    );
 
-    gsap.to(".marquee_part1",{
+  function animateCounts() {
+    document.querySelectorAll(".count").forEach((countElement) => {
+      let count = { value: 0 };
+      let target = parseInt(countElement.getAttribute("data-count"));
+      let span = countElement.querySelector("span");
+
+      gsap.to(count, {
+        value: target,
+        duration: 3,
+        ease: "power4.out",
+        onUpdate: () => {
+          span.textContent = Math.floor(count.value);
+        },
+      });
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    ScrollTrigger.create({
+      trigger: ".countdown",
+      scroller: "body",
+      start: "top 80%",
+      end: "50% 75%",
+      once: true,
+      onEnter: animateCounts,
+    });
+  });
+
+  gsap
+    .to(".marquee_part1", {
       xPercent: -70,
       repeat: -1,
       duration: 30,
       ease: "linear",
     })
-    .totalProgress(0.4)
-    gsap.set( ".marquee_part1",{xPercent:-50})
+    .totalProgress(0.4);
+  gsap.set(".marquee_part1", { xPercent: -50 });
 }
-fourth()  
+fourth();
 function fiveth() {
   if (window.matchMedia("(min-width: 769px)").matches) {
-      var tl = gsap.timeline({
-          scrollTrigger: {
-              trigger: ".fiveth",
-              scroller: "body",
-              start: "top 0%",
-              end: "bottom -100%",
-              scrub: 3,
-              pin: true,
-          }
-      });
+    var tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".fiveth",
+        scroller: "body",
+        start: "top 0%",
+        end: "bottom -100%",
+        scrub: 3,
+        pin: true,
+      },
+    });
 
-      tl.from(".brandingwarper", {
-          y: "100vh",
-      });
-      tl.to(".brandingwarper", {
-          y: "-100vh",
-      }, "a");
-      tl.from(".uxuiwarepr", {
-          y: "100vh",
-      }, "a");
-      tl.to(".uxuiwarepr", {
-          y: "-100vh",
-      }, "b");
-      tl.from(".saaswarepr", {
-          y: "100vh",
-          duration: 1,
-          ease: "power4.out",
-      }, "b");
+    tl.from(".brandingwarper", {
+      y: "100vh",
+    });
+    tl.to(
+      ".brandingwarper",
+      {
+        y: "-100vh",
+      },
+      "a"
+    );
+    tl.from(
+      ".uxuiwarepr",
+      {
+        y: "100vh",
+      },
+      "a"
+    );
+    tl.to(
+      ".uxuiwarepr",
+      {
+        y: "-100vh",
+      },
+      "b"
+    );
+    tl.from(
+      ".saaswarepr",
+      {
+        y: "100vh",
+        duration: 1,
+        ease: "power4.out",
+      },
+      "b"
+    );
 
-      gsap.to('.slidelinebox', {
-          '--after-width': '100%',
-          scrollTrigger: {
-              trigger: ".fiveth",
-              scroller: "body",
-              start: "top 0%",
-              end: "bottom -100%",
-              scrub: 3,
-          }
-      });
+    gsap.to(".slidelinebox", {
+      "--after-width": "100%",
+      scrollTrigger: {
+        trigger: ".fiveth",
+        scroller: "body",
+        start: "top 0%",
+        end: "bottom -100%",
+        scrub: 3,
+      },
+    });
   }
 }
-fiveth()
+fiveth();
 function six() {
   var tl = gsap.timeline({
-      scrollTrigger: {
-          trigger: ".sixth",
-          scroller: "body",
-          start: "top 0%",
-          end: "bottom -100%",
-          scrub: 3,
-          pin: true,
-      }
+    scrollTrigger: {
+      trigger: ".sixth",
+      scroller: "body",
+      start: "top 0%",
+      end: "bottom -100%",
+      scrub: 3,
+      pin: true,
+    },
   });
   tl.to(".blandoverlay", {
-      clipPath: `polygon(0 100%, 100% 100%, 100% 0%, 0 0%)`,
-      duration: 4,
-      ease: "power4.Out",
+    clipPath: `polygon(0 100%, 100% 100%, 100% 0%, 0 0%)`,
+    duration: 4,
+    ease: "power4.Out",
   });
 }
-six()
+six();
 function seven() {
-  gsap.from(".seventh .leftphoneimg .phoneimg img", {
+  gsap.from(
+    ".seventh .leftphoneimg .phoneimg img",
+    {
       y: "100vh",
       stagger: {
-          amount: 0.5
+        amount: 0.5,
       },
       opacity: 0,
       duration: 1,
       ease: "power4.out",
       scrollTrigger: {
-          trigger: ".seventh",
-          scroller: "body",
-          start: "top 60%",
-          end: "30% 40%",
-          scrub: 1,
-      }
-  }, "a");
-  gsap.from(".seventh .rightpera h1  ,.seventh .rightpera p", {
+        trigger: ".seventh",
+        scroller: "body",
+        start: "top 60%",
+        end: "30% 40%",
+        scrub: 1,
+      },
+    },
+    "a"
+  );
+  gsap.from(
+    ".seventh .rightpera h1  ,.seventh .rightpera p",
+    {
       y: "10vh",
       stagger: {
-          amount: 0.5
+        amount: 0.5,
       },
       opacity: 0,
       duration: 1,
       ease: "power4.out",
       scrollTrigger: {
-          trigger: ".rightpera",
-          scroller: "body",
-          start: "top 60%",
-          end: "30% 40%",
-          scrub: 1,
-      }
-  }, "a");
+        trigger: ".rightpera",
+        scroller: "body",
+        start: "top 60%",
+        end: "30% 40%",
+        scrub: 1,
+      },
+    },
+    "a"
+  );
 }
-seven()
+seven();
 
- function eight() {
+function eight() {
   ScrollTrigger.matchMedia({
     "(min-width: 768px)": function () {
       var tl = gsap.timeline({
@@ -821,15 +889,26 @@ seven()
           start: "top 85%",
           end: "30% 40%",
           scrub: 4,
-        }
+        },
       });
-      tl.from(".eightsilder .slidetext1", {
-        y: "-42vh", duration: 3, ease: "Power4.Out"
-      }, "a")
-      .to(".eightsilder2 .slidetext2 ", {
-        y: "40vh", duration: 3, ease: "Power4.Out"
-      }, "a");
-    }
+      tl.from(
+        ".eightsilder .slidetext1",
+        {
+          y: "-42vh",
+          duration: 3,
+          ease: "Power4.Out",
+        },
+        "a"
+      ).to(
+        ".eightsilder2 .slidetext2 ",
+        {
+          y: "40vh",
+          duration: 3,
+          ease: "Power4.Out",
+        },
+        "a"
+      );
+    },
   });
 
   ScrollTrigger.matchMedia({
@@ -840,83 +919,136 @@ seven()
           start: "top 80%",
           end: "40% 40%",
           scrub: 4,
-        }
+        },
       });
-      tl.to(".eightsilder .slidetext1", {
-        y: "10vh", duration: 3, ease: "Power4.Out"
-      }, "a");
-      tl.to(".eightsilder2 .slidetext2", {
-        y: "10vh", duration: 3, ease: "Power4.Out"
-      }, "a");
-    }
+      tl.to(
+        ".eightsilder .slidetext1",
+        {
+          y: "10vh",
+          duration: 3,
+          ease: "Power4.Out",
+        },
+        "a"
+      );
+      tl.to(
+        ".eightsilder2 .slidetext2",
+        {
+          y: "10vh",
+          duration: 3,
+          ease: "Power4.Out",
+        },
+        "a"
+      );
+    },
   });
 
   var swiper = new Swiper(".mySwiper", {
-      spaceBetween: 30,
-      centeredSlides: false,
-      autoplay: {
-          delay: 4000,
-          disableOnInteraction: false,
+    spaceBetween: 30,
+    centeredSlides: false,
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    on: {
+      slideChange: function () {
+        if (this.activeIndex > this.previousIndex) {
+          document.querySelector(".buttonnext").style.backgroundColor =
+            "#1b1c15";
+          document.querySelector(".buttonprev").style.backgroundColor = "";
+        } else {
+          document.querySelector(".buttonprev").style.backgroundColor =
+            "#1b1c15";
+          document.querySelector(".buttonnext").style.backgroundColor = "";
+        }
       },
-      pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-      },
-      navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-      },
-      on: {
-          slideChange: function () {
-              if (this.activeIndex > this.previousIndex) {
-                  document.querySelector('.buttonnext').style.backgroundColor = '#1b1c15';
-                  document.querySelector('.buttonprev').style.backgroundColor = '';
-              } else {
-                  document.querySelector('.buttonprev').style.backgroundColor = '#1b1c15';
-                  document.querySelector('.buttonnext').style.backgroundColor = '';
-              }
-          },
-      },
+    },
   });
-
-
 }
-eight()
+eight();
 
 function fotter() {
   const namelog = document.querySelectorAll(".fotternamelogo h1");
 
   namelog.forEach((name, index) => {
-      const letters = name.textContent.split("").map(letter => `<div class="letterspan">${letter}</div>`).join("");
-      name.innerHTML = letters;
-      const spans = name.querySelectorAll('.letterspan');
-      const targets = index === 0 ? spans : Array.from(spans).reverse();
+    const letters = name.textContent
+      .split("")
+      .map((letter) => `<div class="letterspan">${letter}</div>`)
+      .join("");
+    name.innerHTML = letters;
+    const spans = name.querySelectorAll(".letterspan");
+    const targets = index === 0 ? spans : Array.from(spans).reverse();
 
-      gsap.from(targets, {
-          y: -50,
-          opacity: 0,
-          duration: 1,
-          stagger: 0.1,
-          ease: "power3.inOut",
-          scrollTrigger: {
-              trigger: ".fotter",
-              scroller: "body",
-              start: "top 70%",
-              end: "30% 60%",
-              scrub: 1,
-          }
-      });
+    gsap.from(targets, {
+      y: -50,
+      opacity: 0,
+      duration: 1,
+      stagger: 0.1,
+      ease: "power3.inOut",
+      scrollTrigger: {
+        trigger: ".fotter",
+        scroller: "body",
+        start: "top 70%",
+        end: "30% 60%",
+        scrub: 1,
+      },
+    });
   });
 }
-fotter()
+fotter();
 
-let resizeTimeout;
 
-window.addEventListener("resize", function () {
-  clearTimeout(resizeTimeout);
-  resizeTimeout = setTimeout(() => {
-    location.reload();
-  }, 200);
+const smallDeviceMin = 320;
+const smallDeviceMax = 677;
+const responsiveBreakpoint = 768;
+const largeScreenBreakpoint = 1024;
+const mediumLargeBreakpoint = 1099;
+const largeBreakpoint = 1440;
+const extraLargeBreakpoint = 1601;
+const maxLargeBreakpoint = 2560;
+
+const initialScreenSize = window.innerWidth;
+let currentScreenSize = initialScreenSize; 
+
+window.addEventListener("resize", () => {
+  currentScreenSize = window.innerWidth;
 });
 
 
+if (
+  (initialScreenSize < smallDeviceMax && currentScreenSize >= smallDeviceMax) ||
+  (initialScreenSize >= smallDeviceMax && currentScreenSize < smallDeviceMax) ||
+  (initialScreenSize < responsiveBreakpoint &&
+    currentScreenSize >= responsiveBreakpoint) ||
+  (initialScreenSize >= responsiveBreakpoint &&
+    currentScreenSize < responsiveBreakpoint) ||
+  (initialScreenSize < largeScreenBreakpoint &&
+    currentScreenSize >= largeScreenBreakpoint) ||
+  (initialScreenSize >= largeScreenBreakpoint &&
+    currentScreenSize < largeScreenBreakpoint) ||
+  (initialScreenSize < mediumLargeBreakpoint &&
+    currentScreenSize >= mediumLargeBreakpoint) || 
+  (initialScreenSize >= mediumLargeBreakpoint &&
+    currentScreenSize < mediumLargeBreakpoint) || 
+  (initialScreenSize < largeBreakpoint &&
+    currentScreenSize >= largeBreakpoint) || 
+  (initialScreenSize >= largeBreakpoint &&
+    currentScreenSize < largeBreakpoint) || 
+  (initialScreenSize < extraLargeBreakpoint &&
+    currentScreenSize >= extraLargeBreakpoint) || 
+  (initialScreenSize >= extraLargeBreakpoint &&
+    currentScreenSize < extraLargeBreakpoint) || 
+  (initialScreenSize < maxLargeBreakpoint &&
+    currentScreenSize >= maxLargeBreakpoint) || 
+  (initialScreenSize >= maxLargeBreakpoint &&
+    currentScreenSize < maxLargeBreakpoint) 
+) {
+  location.reload();
+}
