@@ -511,25 +511,13 @@ function third() {
     const height = window.innerHeight;
     
     let leftValue, topValue , downValue ;
-    if (width <=767 ) {
-      leftValue = "0"; 
-      topValue = "0"; 
-      downValue = "0"
+    if (width < 767 ) {
       tl.to(".slidelogo", {
-        left: leftValue,
-        top: topValue,
         rotation: "180deg",
         duration: 1,
         ease: "none",
       })
-      .to(".slidelogo", {
-        rotation: "360deg",
-        top :downValue,
-        left: 0,
-        ease: "none",
-        duration: 1,
-      });
-
+     
     } 
     else if (width >=768 && width <= 850) {
       leftValue = "45rem"; 
