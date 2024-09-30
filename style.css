@@ -3317,8 +3317,7 @@ body::-webkit-scrollbar {
     left: 0px;
     height: 33%;
     overflow: hidden;
-    background: url(/static/Black-Background-Tile-2x-157406eâ€¦.webp)
-      rgb(18, 22, 19);
+    background:rgb(18, 22, 19);
   }
   .pascdn{
     top:10%;
@@ -3688,8 +3687,7 @@ body::-webkit-scrollbar {
   width: 100%;
   height: 100%;
   opacity: 1;
-  background: url(/static/Black-Background-Tile-2x-157406eâ€¦.webp)
-    rgb(18, 22, 19);
+  background: rgb(18, 22, 19);
 }
 .NavigationItems__Wrapper {
   font-style: normal;
@@ -3795,6 +3793,5 @@ body::-webkit-scrollbar {
   left: 0px;
   height: 33%;
   overflow: hidden;
-  background: url(/static/Black-Background-Tile-2x-157406eâ€¦.webp)
-    rgb(18, 22, 19);
+  background: rgb(18, 22, 19);
 } 

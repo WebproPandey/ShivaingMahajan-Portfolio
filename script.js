@@ -62,7 +62,7 @@ function first() {
 
   var gallery = document.querySelector(".gallery");
 
-  var tl2 = gsap.timeline({
+    var tl2 = gsap.timeline({
     scrollTrigger: {
       trigger: "#home",
       start: "top top",
@@ -70,9 +70,9 @@ function first() {
       scrub: 0.8,
       pin: true,
     },
-  });
+    });
 
-  tl2
+    tl2
     .to(
       ".nameheading",
       {
@@ -496,70 +496,90 @@ function hambuger() {
 hambuger();
 
 function third() {
-  gsap
-    .matchMedia()
-    .add("(min-width: 768px) and (max-width: 1024px)", function () {
-      gsap.to(".slidelogo", {
-        y: `${window.innerHeight * 0.6}px`,
-        x: `${window.innerWidth * 0.4}px`,
-        rotation: "180deg",
-        duration: 3,
-        ease: "power4.out",
-        scrollTrigger: {
-          trigger: ".third",
-          scroller: "body",
-          start: "10% 30%",
-          end: "20% 0%",
-          scrub: 1,
-          onLeave: () => {
-            gsap.to(".slidelogo", {
-              y: () => `${window.innerHeight * 2.3}px`,
-              x: () => `${-window.innerWidth * 0.45}px`,
-              rotation: "-360deg",
-              ease: "power4.out",
-              scrollTrigger: {
-                trigger: ".third",
-                scroller: "body",
-                start: "30% 30%",
-                end: "100% 0%",
-                scrub: 1,
-              },
-            });
-          },
-        },
-      });
-    });
+ 
 
-  gsap.matchMedia().add("(min-width: 1025px)", function () {
-    gsap.to(".slidelogo", {
-      rotation: "180deg",
-      y: `${window.innerHeight * 0.6}px`,
-      x: `${window.innerWidth * 0.4}px`,
-      ease: "power4.out",
+    var tl = gsap.timeline({
       scrollTrigger: {
-        trigger: ".third",
-        scroller: "body",
-        start: "10% 20%",
-        end: "20% 0%",
+        trigger: ".leftsection-intro",
+        start: "0% 90%",
+        end: "50% 40%",
         scrub: 1,
-        onLeave: () => {
-          gsap.to(".slidelogo", {
-            rotation: "-360deg",
-            y: () => `${window.innerHeight * 2.1}px`,
-            x: () => `${-window.innerWidth * 0.45}px`,
-            ease: "power4.out",
-            scrollTrigger: {
-              trigger: ".third",
-              scroller: "body",
-              start: "30% 30%",
-              end: "100% 0%",
-              scrub: 1,
-            },
-          });
-        },
+        markers:true
       },
     });
-  });
+    
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+    
+    let leftValue, topValue , downValue ;
+    if (width <=767 ) {
+      leftValue = "0"; 
+      topValue = "0"; 
+      downValue = "0"
+      tl.to(".slidelogo", {
+        left: leftValue,
+        top: topValue,
+        rotation: "180deg",
+        duration: 1,
+        ease: "none",
+      })
+      .to(".slidelogo", {
+        rotation: "360deg",
+        top :downValue,
+        left: 0,
+        ease: "none",
+        duration: 1,
+      });
+
+    } 
+    else if (width >=768 && width <= 850) {
+      leftValue = "45rem"; 
+      topValue = "25%"; 
+      downValue = "80%"
+
+    } 
+    else if (width > 851 && width <= 1023) { 
+      leftValue = "55rem"; 
+      topValue = "25%";
+      downValue = "80%"
+
+      
+    } 
+    else if ( width > 1024 &&  width <= 1199) {
+      leftValue = "60rem"; 
+      topValue = "25%"; 
+      downValue = "75%"
+
+
+    } 
+    else if ( width > 1200 &&  width <= 1299) { 
+      leftValue = "70rem"; 
+      topValue = "25%"; 
+      downValue = "75%"
+
+
+    }else if (width > 1300 && width <= 1600) { 
+      leftValue = "80rem"; 
+      topValue = "25%";
+      downValue = "75%"
+
+
+    }
+    
+    tl.to(".slidelogo", {
+      left: leftValue,
+      top: topValue,
+      rotation: "180deg",
+      duration: 1,
+      ease: "none",
+    })
+    .to(".slidelogo", {
+      rotation: "360deg",
+      top :downValue,
+      left: "5rem",
+      ease: "none",
+      duration: 1,
+    });
 
   gsap.from(".content div h1 ,.slidelogo ", {
     y: "100",
@@ -613,17 +633,17 @@ function third() {
       scrub: 1,
     },
   });
-  gsap
-    .to(".marquee_part", {
-      xPercent: -100,
-      repeat: -1,
-      duration: 20,
-      ease: "linear",
-    })
-    .totalProgress(0.5);
-  gsap.set(".marquee_part", { xPercent: -50 });
 }
-third();
+third()
+gsap.to(".marquee_part", {
+  xPercent: -100,
+  repeat: -1,
+  duration: 20,
+  ease: "linear",
+})
+.totalProgress(0.5);
+gsap.set(".marquee_part", { xPercent: -50 });
+
 function fourth() {
   var tl = gsap.timeline({
     scrollTrigger: {
