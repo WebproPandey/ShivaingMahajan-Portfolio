@@ -504,7 +504,6 @@ function third() {
         start: "0% 90%",
         end: "50% 40%",
         scrub: 1,
-        markers:true
       },
     });
     
