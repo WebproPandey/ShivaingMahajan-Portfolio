@@ -76,7 +76,7 @@ body::-webkit-scrollbar {
   justify-content: end;
   overflow-x: hidden;
   overflow-y: hidden;
-  position: sticky;
+  position: relative;
   top: 0 !important;
   z-index: 2;
 }
@@ -258,16 +258,23 @@ body::-webkit-scrollbar {
     position: absolute;
     top: 0%;
     z-index: 3;
-    padding-top: 15rem;
+    padding-top: 10rem;
+    display: flex;
+    flex-direction: column;
+    gap: 8vh;
   }
  
   .item {
     width: 100%;
-    height: 100%;
+    height: 80%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+  .item img {
+    width: 35%;
+    object-fit: cover;
   }
   
   .item-1 {
@@ -281,12 +288,10 @@ body::-webkit-scrollbar {
   }
   .item-3 {
     align-items: center;
-    padding-top: 7vw;
   }
   .item-4 {
     align-items: end;
     padding-right: 7vw;
-    padding-top: 7vw;
   }
   .item-5 {
     align-items: start;
@@ -371,7 +376,7 @@ body::-webkit-scrollbar {
   margin-top: 3vw;
 }
 .thirdsilder .slidetext {
-  height: 15vh;
+  height: 12vh;
   width:auto;
   background-color: white;
   position: relative;
@@ -379,7 +384,7 @@ body::-webkit-scrollbar {
   display: flex;
   align-items: center;
   transform-origin: right;
-  transform: rotate(-2deg);
+  transform: rotate(-4deg);
 }
 .slidetext::-webkit-scrollbar {
   display: none;
@@ -396,10 +401,10 @@ body::-webkit-scrollbar {
 
 
 .movingtext .textband {
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: #17191a;
-  font-family: "plus";
-  font-weight: 300;
+  font-family: "Nohemi";
+  font-weight: 400;
   text-transform: capitalize;
   mix-blend-mode: difference !important;
 }
@@ -527,11 +532,11 @@ body::-webkit-scrollbar {
 }
 
 .fourthsectionslider .fourthslidetext .fourthmovingtext img {
-  height: 15vh;
-  width: 15vh;
+  height: 10vh;
+  width: 10vh;
 }
 .fourthslidetext .fourthmovingtext .textstrok {
-  font-size: 3rem;
+  font-size: 4rem;
   text-transform: uppercase;
   font-family: "Nohemi";
   font-weight: 600;
@@ -598,12 +603,19 @@ body::-webkit-scrollbar {
   color: #a8a4a4;
 }
 .leftsection .videoinfo .secondpera p {
-  font-size: 2.5rem;
-  font-family: "Nohemi";
+  font-size: 2.2rem;
+  font-family: "plus";
+  font-weight: 500;
+  text-transform: capitalize;
+  word-spacing: 3px;
+  line-height: 2.2rem;
+  display: inline-block;
 }
-
+.secondpera p:hover {
+  color: #5f32c7 ;
+}
 .rightsection .videobox {
-  height: 70vh;
+  height: 80vh;
   width: 75%;
   background: white;
   border-radius: 12px;
@@ -688,7 +700,7 @@ body::-webkit-scrollbar {
 }
 .slidelinebox::after {
   content: "";
-  height: 10%;
+  height: 5%;
   width: var(--after-width, 0%);
   background: white;
   position: absolute;
@@ -768,7 +780,7 @@ body::-webkit-scrollbar {
 .heading1,
 .heading2,
 .heading3 {
-  font-size: 8.2vw;
+  font-size: 10rem;
   letter-spacing: -6px;
   font-family: "Nohemi";
   font-weight: 400;
@@ -781,14 +793,21 @@ body::-webkit-scrollbar {
   gap: 2vw;
   overflow: hidden;
 }
-.sixthheading .heading2 .midheadingimg,
-.blandoverlay .heading2 .midheadingimg {
-  height: 45vh;
-  width: 50vh;
+.sixthheading .heading2 .midheadingimg{
+  height: 4rem;
+  width: 4rem;
   display: inline-block;
   border-radius: 28px;
   margin-right: 2vw;
 }
+.blandoverlay .heading2 .midheadingimg {
+  height: 4rem;
+  width: 4rem;
+  display: inline-block;
+  border-radius: 28px;
+  margin-right: 2vw;
+}
+
 .blandoverlay {
   position: absolute;
   top: 0;
@@ -879,7 +898,6 @@ body::-webkit-scrollbar {
   transform-origin: right;
   display: flex;
   align-items: center;
-  overflow-x: auto;
   position: absolute;
   transform: rotate(-6deg);
 }
@@ -903,16 +921,8 @@ body::-webkit-scrollbar {
   gap: 2vw;
   flex-wrap: nowrap;
   flex-shrink: 0;
-  animation: textnameslide 220s infinite linear;
 }
-@keyframes textnameslide {
-  0% {
-      transform: translateX(0%);
-  }
-  100%{
-      transform: translateX(calc(-100% - 24px));
-  }
-}
+
 .eightsilder .slidetext .movingtext .textband{
   font-size: 6vw;
   text-transform: capitalize;
@@ -2244,13 +2254,13 @@ body::-webkit-scrollbar {
 
 /* complete */
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
-  
+ 
   .hamburger {
-    width: 3.5rem !important;
-    height: 3.5rem !important;
+    width: 2.5rem  !important ;
+    height: 2.5rem !important;
   }
   .hamburger .line {
-    height: 0.5rem !important;
+    height: 0.3rem !important;
   }
   .hamburger .line1 {
     top: 20%;
@@ -2263,29 +2273,13 @@ body::-webkit-scrollbar {
   }
 
   .Header__Wrapper {
-    padding: 2.8rem;
+    padding: 1.2rem 2rem !important;
   }
   .SideNav__Sidebar {
-    -webkit-clip-path: polygon(0px 0px, 100% 0px, 100% 100%, 0px 100%);
-    clip-path: polygon(0px 0px, 100% 0px, 100% 100%, 0px 100%);
     left: -100%;
-    position: fixed;
     top: 0;
     width: 75% !important;
     height: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    padding-left: 1rem;
-    -webkit-transition: all 0.8s cubic-bezier(0.79, 0.33, 0.45, 0.85);
-    -o-transition: all 0.8s cubic-bezier(0.79, 0.33, 0.45, 0.85);
-    transition: all 0.8s cubic-bezier(0.79, 0.33, 0.45, 0.85);
-    z-index: 999;
   }
 
   .NavigationItems__Wrapper {
@@ -2303,24 +2297,6 @@ body::-webkit-scrollbar {
     text-decoration: none;
     font-family: Nohemi;
   }
-
-  .item-2 {
-    align-items: start  !important;
-    padding-left: 7vw;
-  }
-  .item-3 {
-    align-items: center !important;
-    padding-top: 7vw;
-  }
-  .item-4 {
-    align-items: end !important;
-    padding-right: 7vw;
-  }
-  .item-5 {
-    align-items: start !important;
-    padding-left: 7vw;
-  }
-
   .Header__Wrapper {
     padding-right: 2.5vw;
   }
@@ -2429,37 +2405,15 @@ body::-webkit-scrollbar {
   }
 
   .namelogo h1 {
-    font-size: 20vw;
+    font-size: 12vw;
     text-align: start;
   }
 
   .gallery {
     top: 0%;
     flex-direction: column;
-    gap: 10vh;
+    gap: 5vh;
   }
-
-  .item {
-    height: 100%;
-    width: 50%;
-    padding: 0 8vw;
-    align-items: start;
-    margin-top: 15vw;
-  }
-
-  .item img {
-    width: 100%;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 6px;
-  }
-
-  .item-1 {
-    width: 100%;
-    height: 100%;
-    align-items: center;
-  }
-
   .second {
     width: 100%;
     display: flex;
@@ -2475,10 +2429,17 @@ body::-webkit-scrollbar {
   .slidelogo {
     height: 28vh;
     width: 28vh;
+    z-index: 2 !important;
   }
-
+  .slidelogo img{  
+    z-index: 2 !important;
+  }
+  .thirdheading{ 
+    z-index: 32 !important;
+  }
   .content div h1 {
     font-size: 8vw;
+    z-index: 32 !important;
   }
 
   .instoductionsection {
@@ -2717,19 +2678,19 @@ body::-webkit-scrollbar {
 
   .sixthheading,
   .blandoverlay {
-    gap: 2rem;
+    gap: 1.2vh;
   }
 
   .sixthheading .heading2,
   .blandoverlay .heading2 {
-    gap: 2rem;
+    gap: 2vh;
     overflow: hidden;
   }
 
   .heading1,
   .heading2,
   .heading3 {
-    font-size: 6rem;
+    font-size: 16vh;
     letter-spacing: -3px;
   }
 
@@ -2744,6 +2705,8 @@ body::-webkit-scrollbar {
     height: 100%;
     width: 100%;
     object-fit: cover;
+    border-radius: 18% !important;
+
   }
 
   .seventh {
@@ -2776,20 +2739,21 @@ body::-webkit-scrollbar {
   }
 
   .eightsilder1 {
-    height: 50vh;
+    height: 60vh;
     overflow-x: hidden;
   }
   .eightsilder2 {
     height: 50vh;
     overflow-x: hidden;
-    top:-16rem;
+    top:-17.5rem;
+    border-bottom: 2px solid chocolate;
   }
   .slidetext1 {
     margin-top: -4rem !important;
     overflow-x: hidden;
   }
   .eightsilder2 .slidetext2 {
-    margin-top: 1.5rem;
+    margin-top: 5.5rem;
   }
 
   .eightsilder .slidetext .movingtext .shapec {
@@ -2985,8 +2949,8 @@ body::-webkit-scrollbar {
 /* complete */
 @media only screen and (min-width: 1025px) and (max-width: 1440px) {
   .hamburger {
-    width: 4rem !important;
-    height: 4rem !important;
+    width: 3rem !important;
+    height: 3rem !important;
     display: inline-block;
     position: relative;
     z-index: 1;
@@ -2994,7 +2958,7 @@ body::-webkit-scrollbar {
   }
   .hamburger .line {
     width: 100%;
-    height: 0.4rem ;
+    height: 0.2rem ;
     background-color: rgb(153 139 139);
     position: absolute;
     left: 0%;
@@ -3324,7 +3288,7 @@ body::-webkit-scrollbar {
   }
   .sixthheading,
   .blandoverlay {
-    gap: 2rem;
+    gap: .2rem;
   }
 
   .sixthheading .heading2,
@@ -3342,8 +3306,8 @@ body::-webkit-scrollbar {
 
   .sixthheading .heading2 .midheadingimg,
   .blandoverlay .heading2 .midheadingimg {
-    height: 35vh;
-    width: 45vh;
+    height: 25vh;
+    width: 30vh;
   }
 
   .sixthheading .heading2 .midheadingimg img,
@@ -3359,15 +3323,30 @@ body::-webkit-scrollbar {
   .eightsilder2 {
     height: 50vh;
     overflow-x: hidden;
-    top:-15.5rem;  
+    top:-20rem;  
   }
   .slidetext1 {
-    margin-top: 0rem;
+    margin-top: -2rem !important;
     overflow-x: hidden;
   }
   .eightsilder2 .slidetext2 {
     margin-top: 4.5rem;
   }
+  .swiper-slide {
+    padding: 0px 8vw;
+  }
+  .paaratestmn {
+    font-size: 3.5vw;
+    line-height: 4vw;
+  }
+  .fotter {
+    height: 80vh;
+  }
+  .uppercontent .fotternamelogo h1 {
+    font-size: 4vw;
+  }
+  
+ 
   
 }
 @media only screen and (min-width: 1441px) and (max-width: 1600px) {

@@ -66,8 +66,8 @@ function first() {
     scrollTrigger: {
       trigger: "#home",
       start: "top top",
-      end: "+=" + gallery.offsetHeight,
-      scrub: 0.8,
+      end: "+=" + gallery.offsetHeight  ,
+      scrub: 2,
       pin: true,
     },
     });
@@ -78,27 +78,27 @@ function first() {
       {
         width: "20%",
         height: "10%",
-        duration: 10,
+        duration: 20,
         top: "5%",
-        ease: "Power4.Out",
+        ease: "linear",
       },
       "b"
     )
     .to(
       "#namelogo h1",
       {
-        fontSize: "2.6rem",
-        ease: "Power4.Out",
-        duration: 12,
+        fontSize: "1.8rem",
+        ease: "linear",
+        duration: 20,
       },
       "b"
     )
     .to(
       ".gallery",
       {
-        y: `-${gallery.offsetHeight}`, // 20vw in pixels
+        y:-gallery.offsetHeight,
         duration: 20,
-        ease: "power2.easeInOut",
+        ease: "linear",
       },
       "b"
     )
@@ -118,7 +118,7 @@ function first() {
         stagger: {
           amount: 0.3,
         },
-        ease: "Power4.Out",
+        ease: "linear",
       }
     );
 
@@ -249,7 +249,7 @@ function SideNavbarfun() {
           {
             duration: 1,
             left: 0,
-            ease: "power3.out",
+            ease: "linear",
             immediateRender: false,
             clipPath: () =>
               `path('` +
@@ -520,7 +520,7 @@ function third() {
      
     } 
     else if (width >=768 && width <= 850) {
-      leftValue = "45rem"; 
+      leftValue = "40rem"; 
       topValue = "25%"; 
       downValue = "80%"
 
@@ -596,7 +596,7 @@ function third() {
     opacity: 0,
     y: 50,
     duration: 0.8,
-    ease: "Power4.out",
+    ease: "linear",
     stagger: 0.1,
     scrollTrigger: {
       trigger: ".instoductionsection",
@@ -610,7 +610,7 @@ function third() {
     opacity: 0,
     y: 50,
     duration: 0.8,
-    ease: "Power4.out",
+    ease: "linear",
     stagger: 0.1,
     scrollTrigger: {
       trigger: ".rightsection-intro",
@@ -622,14 +622,28 @@ function third() {
   });
 }
 third()
+
+
+
 gsap.to(".marquee_part", {
   xPercent: -100,
   repeat: -1,
-  duration: 20,
+  duration: 1,
   ease: "linear",
 })
 .totalProgress(0.5);
 gsap.set(".marquee_part", { xPercent: -50 });
+
+gsap.to(".movingtext", {
+  xPercent: -80,
+  repeat: -1,
+  duration: 60,
+  ease: "linear",
+})
+.totalProgress(0.5);
+gsap.set(".movingtext", { xPercent: -50 });
+
+
 
 function fourth() {
   var tl = gsap.timeline({
@@ -647,7 +661,7 @@ function fourth() {
     {
       y: "-100vh",
       duration: 3,
-      ease: "Power3.out",
+      ease: "linear",
     },
     "a"
   )
@@ -656,7 +670,7 @@ function fourth() {
       {
         y: "100vh",
         duration: 3,
-        ease: "Power4.out",
+        ease: "linear",
       },
       "a"
     )
@@ -665,7 +679,7 @@ function fourth() {
       {
         y: "100vh",
         duration: 3,
-        ease: "Power4.out",
+        ease: "linear",
       },
       "a"
     )
@@ -674,7 +688,7 @@ function fourth() {
       {
         y: "-100vh",
         duration: 3,
-        ease: "Power3.out",
+        ease: "linear",
       },
       "b"
     )
@@ -683,7 +697,7 @@ function fourth() {
       {
         y: "100vh",
         duration: 3,
-        ease: "Power4.out",
+        ease: "linear",
       },
       "b"
     )
@@ -692,7 +706,7 @@ function fourth() {
       {
         y: "100vh",
         duration: 3,
-        ease: "Power4.out",
+        ease: "linear",
       },
       "b"
     )
@@ -701,7 +715,7 @@ function fourth() {
       {
         y: "-100vh",
         duration: 3,
-        ease: "Power3.out",
+        ease: "linear",
       },
       "c"
     )
@@ -710,7 +724,7 @@ function fourth() {
       {
         y: "100vh",
         duration: 3,
-        ease: "Power4.out",
+        ease: "linear",
       },
       "c"
     )
@@ -719,7 +733,7 @@ function fourth() {
       {
         y: "100vh",
         duration: 3,
-        ease: "Power4.out",
+        ease: "linear",
       },
       "c"
     );
@@ -758,10 +772,10 @@ function fourth() {
     .to(".marquee_part1", {
       xPercent: -70,
       repeat: -1,
-      duration: 30,
+      duration: 20,
       ease: "linear",
     })
-    .totalProgress(0.4);
+    .totalProgress(0.5);
   gsap.set(".marquee_part1", { xPercent: -50 });
 }
 fourth();
