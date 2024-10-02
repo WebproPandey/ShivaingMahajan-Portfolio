@@ -15,7 +15,7 @@ function raf(time) {
 requestAnimationFrame(raf);
 
 function first() {
-  document.querySelector(".loadervideo").addEventListener("ended", function () {
+  // document.querySelector(".loadervideo").addEventListener("ended", function () {
   var tl = gsap.timeline();
 
   var namelog = document.querySelectorAll(".namelogo h1");
@@ -32,9 +32,9 @@ function first() {
 
  
 
-    tl.call(function () {
-      document.getElementById("loader").style.display = "none";
-    });
+    // tl.call(function () {
+    //   document.getElementById("loader").style.display = "none";
+    // });
     tl.to(".Container", {
       opacity:1 ,
       ease: "power3.inOut",
@@ -58,7 +58,7 @@ function first() {
         duration: 1,
         ease: "power4.inOut",
       });
-  });
+  // });
 
   var gallery = document.querySelector(".gallery");
 
@@ -628,7 +628,7 @@ third()
 gsap.to(".marquee_part", {
   xPercent: -100,
   repeat: -1,
-  duration: 1,
+  duration: 20,
   ease: "linear",
 })
 .totalProgress(0.5);
@@ -900,100 +900,22 @@ function seven() {
   );
 }
 seven();
-
-function eight() {
-  ScrollTrigger.matchMedia({
-    "(min-width: 768px)": function () {
-      var tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".eight",
-          start: "top 85%",
-          end: "30% 40%",
-          scrub: 4,
-        },
-      });
-      tl.from(
-        ".eightsilder .slidetext1",
-        {
-          y: "-42vh",
-          duration: 3,
-          ease: "Power4.Out",
-        },
-        "a"
-      ).to(
-        ".eightsilder2 .slidetext2 ",
-        {
-          y: "40vh",
-          duration: 3,
-          ease: "Power4.Out",
-        },
-        "a"
-      );
-    },
-  });
-
-  ScrollTrigger.matchMedia({
-    "(max-width: 767px)": function () {
-      var tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".eight",
-          start: "top 80%",
-          end: "40% 40%",
-          scrub: 4,
-        },
-      });
-      tl.to(
-        ".eightsilder .slidetext1",
-        {
-          y: "10vh",
-          duration: 3,
-          ease: "Power4.Out",
-        },
-        "a"
-      );
-      tl.to(
-        ".eightsilder2 .slidetext2",
-        {
-          y: "10vh",
-          duration: 3,
-          ease: "Power4.Out",
-        },
-        "a"
-      );
-    },
-  });
-
-  var swiper = new Swiper(".mySwiper", {
-    spaceBetween: 30,
-    centeredSlides: false,
-    autoplay: {
-      delay: 4000,
-      disableOnInteraction: false,
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    on: {
-      slideChange: function () {
-        if (this.activeIndex > this.previousIndex) {
-          document.querySelector(".buttonnext").style.backgroundColor =
-            "#1b1c15";
-          document.querySelector(".buttonprev").style.backgroundColor = "";
-        } else {
-          document.querySelector(".buttonprev").style.backgroundColor =
-            "#1b1c15";
-          document.querySelector(".buttonnext").style.backgroundColor = "";
-        }
+function scrollingText() {
+  let tl = gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: ".eightsliderContainer",
+        start: "top 80%",
+        end: "60% 30%",
+        scrub: 0.5,
       },
-    },
-  });
+    })
+    .to("#eightsilder2", {
+      clipPath: "polygon(0 100%, 100% 100%, 100% 0%, 0 0%)",
+      duration: 10,
+    });
 }
-eight();
+scrollingText();
 
 function fotter() {
   const namelog = document.querySelectorAll(".fotternamelogo h1");
