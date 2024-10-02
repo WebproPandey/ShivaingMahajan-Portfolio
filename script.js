@@ -15,7 +15,7 @@ function raf(time) {
 requestAnimationFrame(raf);
 
 function first() {
-  // document.querySelector(".loadervideo").addEventListener("ended", function () {
+  document.querySelector(".loadervideo").addEventListener("ended", function () {
   var tl = gsap.timeline();
 
   var namelog = document.querySelectorAll(".namelogo h1");
@@ -32,9 +32,9 @@ function first() {
 
  
 
-    // tl.call(function () {
-    //   document.getElementById("loader").style.display = "none";
-    // });
+    tl.call(function () {
+      document.getElementById("loader").style.display = "none";
+    });
     tl.to(".Container", {
       opacity:1 ,
       ease: "power3.inOut",
@@ -58,17 +58,20 @@ function first() {
         duration: 1,
         ease: "power4.inOut",
       });
-  // });
+  });
 
-  var gallery = document.querySelector(".gallery");
+  var gallery = document.querySelector(".gallery").offsetHeight;
+  console.log(gallery);
+  
 
     var tl2 = gsap.timeline({
     scrollTrigger: {
-      trigger: "#home",
+      trigger: ".pinsection",
       start: "top top",
-      end: "+=" + gallery.offsetHeight  ,
-      scrub: 2,
+      end: "+=" + gallery ,
+      scrub: 0.5,
       pin: true,
+      // markers: true,
     },
     });
 
@@ -90,24 +93,18 @@ function first() {
         fontSize: "1.8rem",
         ease: "linear",
         duration: 20,
-      },
-      "b"
-    )
-    .to(
-      ".gallery",
-      {
-        y:-gallery.offsetHeight,
-        duration: 20,
-        ease: "linear",
-      },
-      "b"
-    )
+      },"b")
+    // .to(".gallery",
+    //   {
+    //     y:`-${gallery}`,
+    //     duration: 30,
+    //     ease: "linear",
+    //   },"b")
     .to(
       ".contentWraper",
       {
         opacity: 1,
       },
-      "b"
     )
     .from(
       ".uperheading, .uperheading h1 ,.wfirst p, .introheading h1 ,#cta_animate",
@@ -122,23 +119,6 @@ function first() {
       }
     );
 
-  // gsap.matchMedia().add("(min-width: 320px) and (max-width: 767px)", function() {
-  //   var tl2 = gsap.timeline({
-  //     scrollTrigger: {
-  //       trigger: "#home",
-  //       start: "top top",
-  //       end: "+=" + gallery.offsetHeight,
-  //       scrub: 0.8,
-  //       pin: true,
-  //       markers: true,
-  //     },
-  //   });
-  //   tl2.to("#namelogo h1", {
-  //     fontSize: "1.8rem",
-  //     ease: "Power4.Out",
-  //     duration: 12,
-  //   }, "q");
-  // });
 }
 
 first();
