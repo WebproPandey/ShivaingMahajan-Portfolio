@@ -856,6 +856,7 @@ body::-webkit-scrollbar {
   align-items: start;
   gap: 3vw;
   padding-right: 4vw;
+  margin-bottom: 5rem;
 }
 .rightpera h1 {
   font-size: 1.8vw;
@@ -876,7 +877,8 @@ body::-webkit-scrollbar {
   flex-direction: column;
   justify-content: center;
   position: relative;
- overflow: hidden;  
+ overflow: hidden; 
+
 
 }
 
@@ -1577,7 +1579,6 @@ body::-webkit-scrollbar {
   }
 
   .eight {
-    margin-top: 10rem !important;
     min-height: 100vh;
   }
 
