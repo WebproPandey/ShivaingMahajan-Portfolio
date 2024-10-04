@@ -1,5 +1,5 @@
 const lenis = new Lenis({
-  duration: 6,
+  duration: 5,
   easing: (t) => Math.min(1, 1.001 - Math.pow(2, -16 * t)),
   smooth: true,
   smoothTouch: false,
@@ -60,18 +60,18 @@ function first() {
       });
   });
 
-  var gallery = document.querySelector(".gallery").offsetHeight;
-  console.log(gallery);
+
+var gallery = document.querySelector(".gallery").offsetHeight;
   
 
     var tl2 = gsap.timeline({
     scrollTrigger: {
       trigger: ".pinsection",
       start: "top top",
-      end: "+=" + gallery ,
+      end: `top -${gallery}`,
       scrub: 0.5,
       pin: true,
-      // markers: true,
+      markers: true,
     },
     });
 
@@ -81,7 +81,7 @@ function first() {
       {
         width: "20%",
         height: "10%",
-        duration: 20,
+        duration: 10,
         top: "5%",
         ease: "linear",
       },
@@ -92,12 +92,12 @@ function first() {
       {
         fontSize: "1.8rem",
         ease: "linear",
-        duration: 20,
+        duration: 10,
       },"b")
     // .to(".gallery",
     //   {
     //     y:`-${gallery}`,
-    //     duration: 30,
+    //     duration: 10,
     //     ease: "linear",
     //   },"b")
     .to(
@@ -748,8 +748,7 @@ function fourth() {
     });
   });
 
-  gsap
-    .to(".marquee_part1", {
+  gsap.to(".marquee_part1", {
       xPercent: -70,
       repeat: -1,
       duration: 20,
