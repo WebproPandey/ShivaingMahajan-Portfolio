@@ -71,7 +71,6 @@ var gallery = document.querySelector(".gallery").offsetHeight;
       end: `top -${gallery}`,
       scrub: 0.5,
       pin: true,
-      markers: true,
     },
     });
 
